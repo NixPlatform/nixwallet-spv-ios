@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import breadwallet
+@testable import loafwallet
 
 class BRHTTPServerTests: XCTestCase {
     var server: BRHTTPServer!

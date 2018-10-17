@@ -32,7 +32,7 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
     }
     
     func ver(key: String, completionFunc: @escaping (UInt64, Date, BRRemoteKVStoreError?) -> ()) {
-        var req = URLRequest(url: client.url("/kv/1/\(key)"))
+        var req = URLRequest(url: URL(string: "https://api.breadwallet.com/kv/1/\(key)")!)
         req.httpMethod = "HEAD"
         client.dataTaskWithRequest(req, authenticated: true, retryCount: 0) { (dat, resp, err) in
             if let err = err {
@@ -47,7 +47,7 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
     }
     
     func put(_ key: String, value: [UInt8], version: UInt64, completionFunc: @escaping (UInt64, Date, BRRemoteKVStoreError?) -> ()) {
-        var req = URLRequest(url: client.url("/kv/1/\(key)"))
+        var req = URLRequest(url: URL(string: "https://api.breadwallet.com/kv/1/\(key)")!)
         req.httpMethod = "PUT"
         req.addValue("\(version)", forHTTPHeaderField: "If-None-Match")
         req.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
@@ -67,7 +67,7 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
     }
     
     func del(_ key: String, version: UInt64, completionFunc: @escaping (UInt64, Date, BRRemoteKVStoreError?) -> ()) {
-        var req = URLRequest(url: client.url("/kv/1/\(key)"))
+        var req = URLRequest(url: URL(string: "https://api.breadwallet.com/kv/1/\(key)")!)
         req.httpMethod = "DELETE"
         req.addValue("\(version)", forHTTPHeaderField: "If-None-Match")
         client.dataTaskWithRequest(req, authenticated: true, retryCount: 0) { (dat, resp, err) in
@@ -83,7 +83,7 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
     }
     
     func get(_ key: String, version: UInt64, completionFunc: @escaping (UInt64, Date, [UInt8], BRRemoteKVStoreError?) -> ()) {
-        var req = URLRequest(url: client.url("/kv/1/\(key)"))
+        var req = URLRequest(url: URL(string: "https://api.breadwallet.com/kv/1/\(key)")!)
         req.httpMethod = "GET"
         req.addValue("\(version)", forHTTPHeaderField: "If-None-Match")
         client.dataTaskWithRequest(req as URLRequest, authenticated: true, retryCount: 0) { (dat, resp, err) in
@@ -102,7 +102,8 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
     }
     
     func keys(_ completionFunc: @escaping ([(String, UInt64, Date, BRRemoteKVStoreError?)], BRRemoteKVStoreError?) -> ()) {
-        var req = URLRequest(url: client.url("/kv/_all_keys"))
+        var req = URLRequest(url: URL(string: "https://api.breadwallet.com/kv/_all_keys")!)
+        //client.url("/kv/_all_keys")
         req.httpMethod = "GET"
         client.dataTaskWithRequest(req as URLRequest, authenticated: true, retryCount: 0) { (dat, resp, err) in
             if let err = err {
