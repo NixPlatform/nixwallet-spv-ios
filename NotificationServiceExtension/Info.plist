@@ -16,18 +16,10 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
-	<key>CFBundleShortVersionString</key>
-	<string>2.3.1</string>
-	<key>CFBundleVersion</key>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<string>3</string>
-=======
-	<string>75</string>
->>>>>>> 0681a71... v2.2.0 (75)
-=======
-	<string>76</string>
->>>>>>> 9e49cf8... Fix: build error
+  <key>CFBundleShortVersionString</key>
+  <string>2.3.1</string>
+  <key>CFBundleVersion</key>
+  <string>3</string> 
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
