@@ -89,6 +89,11 @@ class BuyCenterTableViewController: UITableViewController, BuyCenterTableViewCel
         registerLogEvent(name:"OPEN_SIMPLEX_STORE")
         present(simplexWebviewVC, animated: true
         , completion: nil)
+      case "Bitrefill":
+        let bitrefillWebviewVC = BRWebViewController(partner: "Bitrefill", mountPoint: mountPoint + "_bitrefill", walletManager: walletManager, store: store, noAuthApiClient: nil)
+        registerLogEvent(name:"OPEN_BITREFILL_STORE")
+        present(bitrefillWebviewVC, animated: true
+          , completion: nil)
       case "Changelly":
         print("Changelly No Code Placeholder")
       case "Coinbase":

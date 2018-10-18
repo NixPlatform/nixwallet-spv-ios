@@ -52,6 +52,8 @@ import WebKit
                 return URL(string: getSimplexParams(appInstallDate: appInstallDate, walletAddress: walletAddress, currencyCode: currencyCode, uuid: uuid))!
             case "/buy_coinbase":
                 return URL(string: "https://api.loafwallet.org/buy")!
+            case "/buy_bitrefill":
+                return Bundle.main.url(forResource: "bitrefill_index", withExtension: "html")!
             case "/support":
                 return URL(string: "https://api.loafwallet.org/support")!
             case "/ea":
@@ -195,9 +197,12 @@ import WebKit
   
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let response = message.body as? String else { return }
-
+        print(message.name)
+        print( "++++++++++++++")
+        print(message.body)
+        print(message.frameInfo)
+        print(message.webView?.title)
         let URLString = URL(string: "https://checkout.simplexcc.com/payments/new")
-        
         var req = URLRequest(url: URLString!)
         req.httpBody = Data(response.utf8)
         req.httpMethod = "POST"

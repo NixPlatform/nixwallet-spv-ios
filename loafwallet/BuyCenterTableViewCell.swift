@@ -139,7 +139,20 @@ class BuyCenterTableViewCell : UITableViewCell {
   }
   
   @objc func cellButtonImageChanged(selector: UIButton) {
-    selectImage.image = #imageLiteral(resourceName: "simplexRightArrow")
+    if let partner = partnerLabel.text {
+      switch partner {
+       case "Simplex":
+        selectImage.image = #imageLiteral(resourceName: "simplexRightArrow")
+       case "Bitrefill":
+        selectImage.image = #imageLiteral(resourceName: "whiteRightArrow")
+       case "Changelly":
+        selectImage.image = #imageLiteral(resourceName: "whiteRightArrow")
+       case "Coinbase":
+        selectImage.image = #imageLiteral(resourceName: "whiteRightArrow")
+       default:
+        selectImage.image = #imageLiteral(resourceName: "whiteRightArrow")
+      }
+    } 
   }
   
   
