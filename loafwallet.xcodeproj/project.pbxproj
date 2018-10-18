@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B3F74231FFB106200CCA50C /* BiometricsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F74211FFB106200CCA50C /* BiometricsSettingsViewController.swift */; };
 		1B3F74241FFB106200CCA50C /* BiometricsSpendingLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F74221FFB106200CCA50C /* BiometricsSpendingLimitViewController.swift */; };
+		1B4F557A21769F1B00F830C3 /* BRBech32.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F557921769F1B00F830C3 /* BRBech32.c */; };
 		1B86CDCA2091528B00BCE82E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF292F1EF9D76F005C330A /* Environment.swift */; };
 		1B86CDCB2091528B00BCE82E /* ModalDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC6AA4C1DF0741100EE5AFD /* ModalDisplayable.swift */; };
 		1B86CDCC2091528B00BCE82E /* WatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30F0EB1EB28542004B8EE5 /* WatchData.swift */; };
@@ -924,6 +925,8 @@
 		11BADA6D95BCDF2F4D25A9A0 /* Pods-loafwallet WatchKit App.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loafwallet WatchKit App.development.xcconfig"; path = "Pods/Target Support Files/Pods-loafwallet WatchKit App/Pods-loafwallet WatchKit App.development.xcconfig"; sourceTree = "<group>"; };
 		1B3F74211FFB106200CCA50C /* BiometricsSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BiometricsSettingsViewController.swift; path = src/ViewControllers/BiometricsSettingsViewController.swift; sourceTree = "<group>"; };
 		1B3F74221FFB106200CCA50C /* BiometricsSpendingLimitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BiometricsSpendingLimitViewController.swift; path = src/ViewControllers/BiometricsSpendingLimitViewController.swift; sourceTree = "<group>"; };
+		1B4F557821769F1A00F830C3 /* BRBech32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBech32.h; sourceTree = "<group>"; };
+		1B4F557921769F1B00F830C3 /* BRBech32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBech32.c; sourceTree = "<group>"; };
 		1B86CEBA2091528B00BCE82E /* loafwallet-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "loafwallet-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B86CEBE2091538B00BCE82E /* Dev.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Dev.plist; sourceTree = "<group>"; };
 		1B86CEFA209154F800BCE82E /* MessagesExtension-dev.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MessagesExtension-dev.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2185,6 +2188,8 @@
 				1BBAEBEA1F80237B0047DEA8 /* BRArray.h */,
 				1BBAEBEB1F80237B0047DEA8 /* BRBase58.c */,
 				1BBAEBEC1F80237B0047DEA8 /* BRBase58.h */,
+				1B4F557921769F1B00F830C3 /* BRBech32.c */,
+				1B4F557821769F1A00F830C3 /* BRBech32.h */,
 				1BBAEBED1F80237B0047DEA8 /* BRBIP32Sequence.c */,
 				1BBAEBEE1F80237B0047DEA8 /* BRBIP32Sequence.h */,
 				1BBAEBEF1F80237B0047DEA8 /* BRBIP38Key.c */,
@@ -5038,6 +5043,7 @@
 				1BBAEC8F1F8026130047DEA8 /* BRSet.c in Sources */,
 				1BBAEC8E1F8026090047DEA8 /* BRCrypto.c in Sources */,
 				1BBAEC8D1F8026030047DEA8 /* BRPaymentProtocol.c in Sources */,
+				1B4F557A21769F1B00F830C3 /* BRBech32.c in Sources */,
 				1BBAEC8C1F8025FC0047DEA8 /* BRPeerManager.c in Sources */,
 				1BBAEC8B1F8025F60047DEA8 /* BRKey.c in Sources */,
 				1BBAEC8A1F8025EF0047DEA8 /* BRBIP39Mnemonic.c in Sources */,
