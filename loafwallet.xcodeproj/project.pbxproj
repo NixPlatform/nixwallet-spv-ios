@@ -309,6 +309,12 @@
 		22C431341DF89DFE0017CAEA /* BRCoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C431331DF89DFE0017CAEA /* BRCoderTests.swift */; };
 		22C431361DF8A6DF0017CAEA /* BRAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C431351DF8A6DF0017CAEA /* BRAPIClientTests.swift */; };
 		22E773041EE7813000397E0E /* Bonjour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E773031EE7813000397E0E /* Bonjour.swift */; };
+		243F1C64217A27F000AF719F /* coinbase_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 243F1C63217A27F000AF719F /* coinbase_index.html */; };
+		243F1C65217A27F000AF719F /* coinbase_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 243F1C63217A27F000AF719F /* coinbase_index.html */; };
+		243F1C67217A3CAB00AF719F /* SimpleAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F1C66217A3CAA00AF719F /* SimpleAmountViewController.swift */; };
+		243F1C68217A3CAB00AF719F /* SimpleAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F1C66217A3CAA00AF719F /* SimpleAmountViewController.swift */; };
+		243F1C6A217D3CC100AF719F /* CircleSliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F1C69217D3CC100AF719F /* CircleSliderControl.swift */; };
+		243F1C6B217D3CC100AF719F /* CircleSliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F1C69217D3CC100AF719F /* CircleSliderControl.swift */; };
 		246A76D0F92908541210EB56 /* Pods_loafwallet_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AEDF2F01514EFDF9EF777D /* Pods_loafwallet_WatchKit_App.framework */; };
 		24B8FAC12160497C00A155B1 /* BuyCenterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8FAC02160497B00A155B1 /* BuyCenterTableViewController.swift */; };
 		24B8FAC22160497C00A155B1 /* BuyCenterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8FAC02160497B00A155B1 /* BuyCenterTableViewController.swift */; };
@@ -1111,6 +1117,9 @@
 		22C431331DF89DFE0017CAEA /* BRCoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRCoderTests.swift; sourceTree = "<group>"; };
 		22C431351DF8A6DF0017CAEA /* BRAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAPIClientTests.swift; sourceTree = "<group>"; };
 		22E773031EE7813000397E0E /* Bonjour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bonjour.swift; sourceTree = "<group>"; };
+		243F1C63217A27F000AF719F /* coinbase_index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = coinbase_index.html; sourceTree = "<group>"; };
+		243F1C66217A3CAA00AF719F /* SimpleAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAmountViewController.swift; sourceTree = "<group>"; };
+		243F1C69217D3CC100AF719F /* CircleSliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSliderControl.swift; sourceTree = "<group>"; };
 		24B8FAC02160497B00A155B1 /* BuyCenterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCenterTableViewController.swift; sourceTree = "<group>"; };
 		24B8FAC3216128A000A155B1 /* PartnerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerData.swift; sourceTree = "<group>"; };
 		24B8FAC621615E3D00A155B1 /* BuyCenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCenterTableViewCell.swift; sourceTree = "<group>"; };
@@ -2498,6 +2507,14 @@
 			path = libbz2;
 			sourceTree = "<group>";
 		};
+		243F1C62217A27B400AF719F /* Coinbase_Web */ = {
+			isa = PBXGroup;
+			children = (
+				243F1C63217A27F000AF719F /* coinbase_index.html */,
+			);
+			name = Coinbase_Web;
+			sourceTree = "<group>";
+		};
 		24B8FAD52162B6D400A155B1 /* Bitrefill_Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -2530,6 +2547,7 @@
 				24B8FAC02160497B00A155B1 /* BuyCenterTableViewController.swift */,
 				24B8FAC621615E3D00A155B1 /* BuyCenterTableViewCell.swift */,
 				24B8FAD12162B10200A155B1 /* BuyCenterWebViewController.swift */,
+				243F1C66217A3CAA00AF719F /* SimpleAmountViewController.swift */,
 			);
 			name = BuyCenter;
 			sourceTree = "<group>";
@@ -3299,6 +3317,7 @@
 				CE20C90F1DBE5B5100C8397A /* Views */,
 				CEBF33021DDE177F00348FC6 /* ViewModels */,
 				CE6D0E5A1E14BF8400137DF1 /* Models */,
+				243F1C62217A27B400AF719F /* Coinbase_Web */,
 				24B8FAD52162B6D400A155B1 /* Bitrefill_Web */,
 				CE20C8F01DBAF6E100C8397A /* Extensions */,
 				22A9A9311DF61930000F0016 /* Platform */,
@@ -3742,6 +3761,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBF33031DDE17A600348FC6 /* Transaction.swift */,
+				243F1C69217D3CC100AF719F /* CircleSliderControl.swift */,
 				CE27F9581E2C8EA300F7F7F2 /* Amount.swift */,
 				CE124CF71E67A8E500DFA146 /* TransactionDirection.swift */,
 			);
@@ -4374,6 +4394,7 @@
 				1B86CEA42091528B00BCE82E /* Localizable.strings in Resources */,
 				24B8FADD2162D29100A155B1 /* general.css in Resources */,
 				1B86CEA62091528B00BCE82E /* CircularPro-Medium.otf in Resources */,
+				243F1C64217A27F000AF719F /* coinbase_index.html in Resources */,
 				1B86CEA72091528B00BCE82E /* CircularPro-Bold.otf in Resources */,
 				1B86CEA92091528B00BCE82E /* Assets.xcassets in Resources */,
 			);
@@ -4432,6 +4453,7 @@
 				CE29901A1EFD6DE50093A0F2 /* Localizable.strings in Resources */,
 				24B8FADC2162D29100A155B1 /* general.css in Resources */,
 				CEAA9EA41DC2FC700066731D /* CircularPro-Medium.otf in Resources */,
+				243F1C65217A27F000AF719F /* coinbase_index.html in Resources */,
 				CEAA9E9E1DC2F90C0066731D /* CircularPro-Bold.otf in Resources */,
 				75A2A79B1DA5934300A983D8 /* Assets.xcassets in Resources */,
 			);
@@ -4801,6 +4823,7 @@
 				1B86CE252091528B00BCE82E /* PhoneWCSessionManager.swift in Sources */,
 				1B86CE262091528B00BCE82E /* WalletManager+Auth.swift in Sources */,
 				1B86CE272091528B00BCE82E /* BRWebViewController.swift in Sources */,
+				243F1C6A217D3CC100AF719F /* CircleSliderControl.swift in Sources */,
 				1B86CE282091528B00BCE82E /* UIViewController+Alerts.swift in Sources */,
 				1B86CE292091528B00BCE82E /* Amount.swift in Sources */,
 				1B86CE2A2091528B00BCE82E /* Date+Additions.swift in Sources */,
@@ -4832,6 +4855,7 @@
 				1B86CE412091528B00BCE82E /* MenuViewController.swift in Sources */,
 				1B86CE422091528B00BCE82E /* SettingsViewController.swift in Sources */,
 				1B86CE432091528B00BCE82E /* RequestAmountViewController.swift in Sources */,
+				243F1C67217A3CAB00AF719F /* SimpleAmountViewController.swift in Sources */,
 				1B86CE442091528B00BCE82E /* VerifyPinViewController.swift in Sources */,
 				1B86CE452091528B00BCE82E /* UserDefaultsUpdater.swift in Sources */,
 				1B86CE462091528B00BCE82E /* Circle.swift in Sources */,
@@ -5159,6 +5183,7 @@
 				CEC4CF091F0C84AB00E5C82E /* UIViewController+Alerts.swift in Sources */,
 				CE27F9591E2C8EA300F7F7F2 /* Amount.swift in Sources */,
 				CE1280F61EEA855C00D27649 /* Date+Additions.swift in Sources */,
+				243F1C68217A3CAB00AF719F /* SimpleAmountViewController.swift in Sources */,
 				CED82D4E1E575A5500507A9B /* main.swift in Sources */,
 				CEEC708E1E954AAB00EF788E /* AboutCell.swift in Sources */,
 				22A9A9461DF61945000F0016 /* BRAPIClient.swift in Sources */,
@@ -5261,6 +5286,7 @@
 				CEBF32F41DDCE12900348FC6 /* AccountFooterView.swift in Sources */,
 				CE9057181DFF0FA8006BA848 /* String+Additions.swift in Sources */,
 				CED341331EF5A5C00014912A /* InAppAlert.swift in Sources */,
+				243F1C6B217D3CC100AF719F /* CircleSliderControl.swift in Sources */,
 				CE47A8E01F7DA54000FF35BA /* UIScreen+Additions.swift in Sources */,
 				CE3754AD1DDE6E080045B0CB /* MaskedShadow.swift in Sources */,
 				222C42521E904C5000078EB5 /* AssociatedObject.swift in Sources */,

@@ -18,6 +18,7 @@ import WebKit
     let store: Store
     let noAuthApiClient: BRAPIClient?
     let partner : String?
+    let fiatAmount : Double
     let activityIndicator : UIActivityIndicatorView
     var didLoad = false
     var didAppear = false
@@ -52,6 +53,7 @@ import WebKit
                 return URL(string: getSimplexParams(appInstallDate: appInstallDate, walletAddress: walletAddress, currencyCode: currencyCode, uuid: uuid))!
             case "/buy_coinbase":
                 return URL(string: "https://api.loafwallet.org/buy")!
+                //return Bundle.main.url(forResource: "coinbase_index", withExtension: "html")!
             case "/buy_bitrefill":
                 return Bundle.main.url(forResource: "bitrefill_index", withExtension: "html")!
             case "/support":
@@ -73,16 +75,17 @@ import WebKit
       
         return "https://buy.loafwallet.org/?address=\(walletAddress)&code=\(currencyCode)&idate=\(timestamp)&uid=\(uuid)"
     }
-    
+  
     private let messageUIPresenter = MessageUIPresenter()
     
-    init(partner: String?, mountPoint: String = "/", walletManager: WalletManager, store: Store, noAuthApiClient: BRAPIClient? = nil) {
+  init(partner: String?, fiatAmount: Double? = 0.0, mountPoint: String = "/", walletManager: WalletManager, store: Store, noAuthApiClient: BRAPIClient? = nil) {
         wkProcessPool = WKProcessPool()
         self.mountPoint = mountPoint
         self.walletManager = walletManager
         self.store = store
         self.noAuthApiClient = noAuthApiClient
         self.partner = partner ?? ""
+        self.fiatAmount = fiatAmount!
         self.activityIndicator = UIActivityIndicatorView()
         super.init(nibName: nil, bundle: nil)
     }
@@ -196,22 +199,22 @@ import WebKit
     }
   
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+      
+      switch partner {
+       case "Simplex":
         guard let response = message.body as? String else { return }
-        print(message.name)
-        print( "++++++++++++++")
-        print(message.body)
-        print(message.frameInfo)
-        print(message.webView?.title)
-        let URLString = URL(string: "https://checkout.simplexcc.com/payments/new")
-        var req = URLRequest(url: URLString!)
+        var req = URLRequest(url: URL(string:"https://checkout.simplexcc.com/payments/new")!)
         req.httpBody = Data(response.utf8)
         req.httpMethod = "POST"
-        
         DispatchQueue.main.async {
-            let browser = BRBrowserViewController()
-            browser.load(req)
-            self.present(browser, animated: true, completion: nil)
+          let browser = BRBrowserViewController()
+          browser.load(req)
+          self.present(browser, animated: true, completion: nil)
         }
+       default:
+        fatalError()
+      }
+
         
     }
     

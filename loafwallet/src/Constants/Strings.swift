@@ -174,7 +174,7 @@ enum S {
         static let bitrefillTitle = NSLocalizedString("BuyCenter.BitrefillTitle", value: "Bitrefill", comment: "Bitrefill Title")
         static let bitrefillFinancialDetails = NSLocalizedString("BuyCenter.bitrefillFinancialDetails", value: "• Buy gift cards\n• Refill prepaid phones\n• Steam, Amazon, Hotels.com\n• Works in 170 countries", comment: "Bitrefill buy financial details")
         static let coinbaseTitle = NSLocalizedString("BuyCenter.CoinbaseTitle", value: "Coinbase", comment: "Coinbase Title")
-        static let coinbaseFinancialDetails = NSLocalizedString("BuyCenter.coinbaseFinancialDetails", value: "• Buy Litecoin\n• Available in 33 countries\n• Trade and Store your Litecoin\n• Easy for cryptocurrency novices", comment: "Coinbase buy financial details")
+        static let coinbaseFinancialDetails = NSLocalizedString("BuyCenter.coinbaseFinancialDetails", value: "• Buy Litecoin\n• Access in 33 countries\n• Trade & store Litecoin\n• Easy for cryptocurrency novices", comment: "Coinbase buy financial details")
       }
     }
 
@@ -537,11 +537,17 @@ enum S {
         static let alertMessage = NSLocalizedString("WipeWallet.alertMessage", value: "Are you sure you want to delete this wallet?", comment: "Wipe wallet alert message")
         static let wipe = NSLocalizedString("WipeWallet.wipe", value: "Wipe", comment: "Wipe wallet button title")
         static let wiping = NSLocalizedString("WipeWallet.wiping", value: "Wiping...", comment: "Wiping activity message")
+        static let wipingWalletAndPIN = NSLocalizedString("WipeWallet.wiping", value: "Wiping LoafWallet & PIN...", comment: "Wiping activity message")
+
         static let failedTitle = NSLocalizedString("WipeWallet.failedTitle", value: "Failed", comment: "Failed wipe wallet alert title")
         static let failedMessage = NSLocalizedString("WipeWallet.failedMessage", value: "Failed to wipe wallet.", comment: "Failed wipe wallet alert message")
         static let instruction = NSLocalizedString("WipeWallet.instruction", value: "To start a new wallet or restore an existing wallet, you must first erase the wallet that is currently installed. To continue, enter the current wallet's Paper Key.", comment: "Enter key to wipe wallet instruction.")
         static let startMessage = NSLocalizedString("WipeWallet.startMessage", value: "Starting or recovering another wallet allows you to access and manage a different LoafWallet wallet on this device.", comment: "Start wipe wallet view message")
         static let startWarning = NSLocalizedString("WipeWallet.startWarning", value: "Your current wallet will be removed from this device. If you wish to restore it in the future, you will need to enter your Paper Key.", comment: "Start wipe wallet view warning")
+      
+        static let forgotPin = NSLocalizedString("WipeWallet.forgotPIN", value: "Forget your PIN?", comment: "Ask is PIN was forgotten")
+        static let wipeZeroAlertTitle = NSLocalizedString("WipeWallet.wipeZero.AlertTitle", value: "Wipe LoafWallet?", comment: "Wipe Zero wallet alert title")
+      static let wipeZeroAlertMessage = NSLocalizedString("WipeWallet.wipeZero.AlertMessage", value: "Your LoafWallet has a zero balance. But, after wiping you must create a new PIN & save the seed phrase.", comment: "Wipe zero wallet alert message")
     }
 
     enum FeeSelector {

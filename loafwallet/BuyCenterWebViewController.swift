@@ -36,7 +36,6 @@ class BuyCenterWebViewController : UIViewController {
         let contents = try String(contentsOfFile: filepath)
         let url = URL(fileURLWithPath: contents)
         let request = URLRequest(url: url)
-        print("FILE ++++++++++++%@",request)
         webView.load(request)
         
       } catch {

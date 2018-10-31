@@ -55,15 +55,15 @@ extension UIColor {
     }
   
     static var grayTextTint: UIColor {
-      return UIColor(red: 163.0/255.0, green: 168.0/255.0, blue: 173.0/255.0, alpha: 1.0)
+      return #colorLiteral(red: 0.6987794042, green: 0.7167400718, blue: 0.7337338924, alpha: 1) //UIColor(red: 163.0/255.0, green: 168.0/255.0, blue: 173.0/255.0, alpha: 1.0)
     }
   
     static var secondaryGrayText: UIColor {
-      return UIColor(red: 101.0/255.0, green: 105.0/255.0, blue: 110.0/255.0, alpha: 1.0)
+      return #colorLiteral(red: 0.4713534713, green: 0.4876565933, blue: 0.5066437721, alpha: 1) //UIColor(red: 101.0/255.0, green: 105.0/255.0, blue: 110.0/255.0, alpha: 1.0)
     }
   
     static var grayBackgroundTint: UIColor {
-      return UIColor(red: 250.0/255.0, green: 251.0/255.0, blue: 252.0/255.0, alpha: 1.0)
+      return #colorLiteral(red: 0.9843682647, green: 0.987624228, blue: 0.9906995893, alpha: 1) //UIColor(red: 250.0/255.0, green: 251.0/255.0, blue: 252.0/255.0, alpha: 1.0)
     }
   
     static var cameraGuidePositive: UIColor {

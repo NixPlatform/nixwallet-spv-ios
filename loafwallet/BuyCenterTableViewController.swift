@@ -37,7 +37,7 @@ class BuyCenterTableViewController: UITableViewController, BuyCenterTableViewCel
       self.tableView.dataSource = self
       self.tableView.delegate = self
       self.tableView.register(BuyCenterTableViewCell.self, forCellReuseIdentifier: buyCellReuseIdentifier)
-      self.tableView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1) // #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
+      self.tableView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1) 
       self.clearsSelectionOnViewWillAppear = false
     }
 
@@ -70,34 +70,40 @@ class BuyCenterTableViewController: UITableViewController, BuyCenterTableViewCel
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return headerHeight }
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
+      var tableCell = BuyCenterTableViewCell()
       let cell = tableView.dequeueReusableCell(withIdentifier: buyCellReuseIdentifier, for: indexPath) as! BuyCenterTableViewCell
       let partnerData = partnerArray[indexPath.row]
-        cell.partnerLabel.text = partnerData["title"] as? String
+      let partnerName = partnerData["title"] as! String
+        cell.partnerLabel.text = partnerName
         cell.financialDetailsLabel.text = (partnerData["details"] as? String)! + Currency.simplexRanges()
         cell.logoImageView.image = partnerData["logo"] as? UIImage
         cell.frameView.backgroundColor = (partnerData["baseColor"] as? UIColor)!
+        cell.turnOnPriceControl(partner: partnerName)
         cell.delegate = self
-      
-     return cell
+        cell.setNeedsDisplay()
+        tableCell = cell
+     return tableCell
     }
 
-  func didClickPartnerCell(partner: String) {
+  func didClickPartnerCell(partner: String, fiatAmount: Double) {
     
     switch partner {
       case "Simplex":
-        let simplexWebviewVC = BRWebViewController(partner: "Simplex", mountPoint: mountPoint + "_simplex", walletManager: walletManager, store: store, noAuthApiClient: nil)
+        let simplexWebviewVC = BRWebViewController(partner: "Simplex", fiatAmount: 0.0, mountPoint: mountPoint + "_simplex", walletManager: walletManager, store: store, noAuthApiClient: nil)
         registerLogEvent(name:"OPEN_SIMPLEX_STORE")
         present(simplexWebviewVC, animated: true
         , completion: nil)
       case "Bitrefill":
-        let bitrefillWebviewVC = BRWebViewController(partner: "Bitrefill", mountPoint: mountPoint + "_bitrefill", walletManager: walletManager, store: store, noAuthApiClient: nil)
+        let bitrefillBrowserVC = BRBrowserViewController()
+        guard let url = Bundle.main.url(forResource: "bitrefill_index", withExtension: "html") else {return}
+        bitrefillBrowserVC.load(URLRequest(url:url))
+        self.present(bitrefillBrowserVC, animated: true, completion: nil)
         registerLogEvent(name:"OPEN_BITREFILL_STORE")
-        present(bitrefillWebviewVC, animated: true
-          , completion: nil)
       case "Changelly":
         print("Changelly No Code Placeholder")
       case "Coinbase":
-        let coinbaseWebViewWC = BRWebViewController(partner: "Coinbase", mountPoint: mountPoint + "_coinbase", walletManager: walletManager, store: store, noAuthApiClient: nil)
+        let coinbaseWebViewWC = BRWebViewController(partner: "Coinbase", fiatAmount: fiatAmount, mountPoint: mountPoint + "_coinbase", walletManager: walletManager, store: store, noAuthApiClient: nil)
         present(coinbaseWebViewWC, animated: true) {
           //
        }

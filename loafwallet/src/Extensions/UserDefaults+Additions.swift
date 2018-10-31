@@ -23,6 +23,7 @@ private let customNodeIPKey = "customNodeIPKey"
 private let customNodePortKey = "customNodePortKey"
 private let hasPromptedShareDataKey = "hasPromptedShareDataKey"
 private let hasShownWelcomeKey = "hasShownWelcomeKey"
+private let walletHasZeroBalanceKey = "WALLET_HAS_ZERO_BALANCE"
 
 extension UserDefaults {
 
@@ -167,6 +168,17 @@ extension UserDefaults {
         }
         return false
     }
+  
+    static var walletHasZeroBalance: Bool {
+      get {
+        guard defaults.object(forKey: walletHasZeroBalanceKey) != nil else {
+          return true
+        }
+        return defaults.bool(forKey: walletHasZeroBalanceKey)
+      }
+      set { defaults.set(newValue, forKey: walletHasZeroBalanceKey) }
+    }
+  
 }
 
 //MARK: - Prompts

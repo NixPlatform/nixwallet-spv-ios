@@ -9,7 +9,21 @@
 import Foundation
 import UIKit
 
+
+
+let coinbaseWidgetCode = "58a81dde-3bb2-56b7-998c-b28e7d500e25"
+
 class Partner {
+  
+  
+  class func shouldShowPriceControl(partnerName:String) -> Bool {
+    switch partnerName {
+    case "Coinbase":
+      return true
+    default:
+      return false
+    }
+  }
   
   class func dataArray() -> [[String:AnyObject]] {
     let simplexDictionary =
@@ -17,11 +31,8 @@ class Partner {
        "details":S.BuyCenter.Cells.simplexFinancialDetails,
        "logo":UIImage(named: "simplexLogo") ?? " ",
        "baseColor":#colorLiteral(red: 0.4156862745, green: 0.4274509804, blue: 0.4431372549, alpha: 1)] as [String : AnyObject]
-    
-    
-//TODO: Uncomment as integration progresses, kcw-grunt
-
-    
+  
+  //TODO: Uncomment as integration progresses, kcw-grunt
     let coinbaseDictionary =
       ["title":S.BuyCenter.Cells.coinbaseTitle as AnyObject,
        "details":S.BuyCenter.Cells.coinbaseFinancialDetails,
@@ -41,5 +52,5 @@ class Partner {
  
     return [simplexDictionary,bitrefillDictionary,coinbaseDictionary,changellyDictionary]
   }
-  
+
 }

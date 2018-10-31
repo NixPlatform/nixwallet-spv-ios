@@ -12,7 +12,6 @@ import Foundation
 struct Satoshis {
     let rawValue: UInt64
 }
-
 extension Satoshis {
 
     init(_ rawValue: UInt64) {

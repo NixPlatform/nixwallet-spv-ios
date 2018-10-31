@@ -186,6 +186,10 @@ class WalletCoordinator : Subscriber, Trackable {
             DispatchQueue.main.async {
                 self.checkForReceived(newBalance: newBalance)
                 self.store.perform(action: WalletChange.setBalance(newBalance))
+                if newBalance > 0 {
+                  UserDefaults.walletHasZeroBalance = false
+                  UserDefaults.standard.synchronize()
+                }
             }
         }
     }

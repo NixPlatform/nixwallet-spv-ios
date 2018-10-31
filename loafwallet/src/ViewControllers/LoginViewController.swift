@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import Crashlytics
 
 private let biometricsSize: CGFloat = 32.0
 private let topControlHeight: CGFloat = 32.0
@@ -43,10 +44,12 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
     private let pinPad = PinPadViewController(style: .clear, keyboardType: .pinPad, maxDigits: 0)
     private let pinViewContainer = UIView()
     private var pinView: PinView?
+    private let window = UIWindow()
     private let addressButton = SegmentedButton(title: S.UnlockScreen.myAddress, type: .left)
     private let scanButton = SegmentedButton(title: S.UnlockScreen.scan, type: .right)
     private let isPresentedForLock: Bool
     private let disabledView: WalletDisabledView
+    private var wipeZeroWalletButton = UIButton()
     private let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 
     private var logo: UIImageView = {
@@ -67,7 +70,7 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         return button
     }()
     private let subheader = UILabel(font: .customBody(size: 16.0), color: .white)
-    private var pinPadPottom: NSLayoutConstraint?
+    private var pinPadBottom: NSLayoutConstraint?
     private var topControlTop: NSLayoutConstraint?
     private var unlockTimer: Timer?
     private let pinPadBackground = GradientView()
@@ -100,6 +103,7 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         if pinView != nil {
             addPinView()
         }
+        checkforZeroBalance()
         disabledView.didTapReset = { [weak self] in
             guard let store = self?.store else { return }
             guard let walletManager = self?.walletManager else { return }
@@ -150,6 +154,14 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         unlockTimer?.invalidate()
     }
 
+    private var topViewController: UIViewController? {
+      var viewController = window.rootViewController
+      while viewController?.presentedViewController != nil {
+        viewController = viewController?.presentedViewController
+      }
+      return viewController
+    }
+  
     private func addPinView() {
         guard let pinView = pinView else { return }
         pinViewContainer.addSubview(pinView)
@@ -183,11 +195,11 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         backgroundView.constrain(toSuperviewEdges: nil)
         if walletManager != nil {
             addChildViewController(pinPad, layout: {
-                pinPadPottom = pinPad.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: E.isIPhoneX ? -C.padding[3] : 0.0)
+                pinPadBottom = pinPad.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: E.isIPhoneX ? -C.padding[3] : 0.0)
                 pinPad.view.constrain([
                     pinPad.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                     pinPad.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                    pinPadPottom,
+                    pinPadBottom,
                     pinPad.view.heightAnchor.constraint(equalToConstant: pinPad.height) ])
             })
         }
@@ -291,13 +303,15 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         view.layoutIfNeeded()
 
         UIView.spring(0.6, animations: {
-            self.pinPadPottom?.constant = self.pinPad.height
+            self.pinPadBottom?.constant = self.pinPad.height
             self.topControlTop?.constant = -100.0
+    
             lock.alpha = 1.0
             label.alpha = 1.0
             self.logo.alpha = 0.0
             self.subheader.alpha = 0.0
             self.pinView?.alpha = 0.0
+            self.wipeZeroWalletButton.alpha = 0.0
             self.view.layoutIfNeeded()
         }) { completion in
             if self.shouldSelfDismiss {
@@ -392,8 +406,105 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
             self?.setNeedsStatusBarAppearanceUpdate()
         }
     }
+  
+    private func checkforZeroBalance() {
+      
+      if UserDefaults.walletHasZeroBalance && walletManager != nil {
+          wipeZeroWalletButton = UIButton(frame: CGRect.zero)
+          wipeZeroWalletButton.addTarget(self, action: #selector(LoginViewController.clearZeroWallet), for: .touchUpInside)
+          wipeZeroWalletButton.backgroundColor = .white
+          wipeZeroWalletButton.setTitle(S.WipeWallet.forgotPin, for: .normal)
+          wipeZeroWalletButton.titleLabel?.font = .customBody(size: 12.0)
+          wipeZeroWalletButton.setTitleColor(.secondaryGrayText, for: .normal)
+          wipeZeroWalletButton.translatesAutoresizingMaskIntoConstraints = false
+          
+          view.addSubview(wipeZeroWalletButton)
+          
+          wipeZeroWalletButton.constrain([
+          wipeZeroWalletButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+          wipeZeroWalletButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+          wipeZeroWalletButton.heightAnchor.constraint(equalToConstant: 40),
+          wipeZeroWalletButton.bottomAnchor.constraint(equalTo: pinPad.view.topAnchor)
+          ])
+       }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    }
+  
+    @objc private func clearZeroWallet() {
+      let alert = UIAlertController(title: S.WipeWallet.wipeZeroAlertTitle, message: S.WipeWallet.wipeZeroAlertMessage, preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: S.Button.cancel, style: .cancel, handler: { _ in
+        self.registerLogEvent(name:"CANCELLED_WIPING_LOAFWALLET_DATA")
+      }))
+      
+      alert.addAction(UIAlertAction(title: S.Button.ok, style: .destructive, handler: { _ in
+        self.showWipeView()
+          DispatchQueue.walletQueue.async {
+            self.walletManager?.peerManager?.disconnect()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+              if (self.walletManager?.wipeWallet(pin: "forceWipe"))! {
+                self.store.trigger(name: .reinitWalletManager({}))
+                self.registerLogEvent(name:"COMPLETED_WIPING_LOAFWALLET_DATA")
+              } else {
+                let failure = UIAlertController(title: S.WipeWallet.failedTitle, message: S.WipeWallet.failedMessage, preferredStyle: .alert)
+                failure.addAction(UIAlertAction(title: S.Button.ok, style: .default, handler: nil))
+                self.present(failure, animated: true, completion: nil)
+              }
+            })
+          }
+      }))
+      present(alert, animated: true, completion: nil)
+   }
+
+   private func showWipeView() {
+    
+    registerLogEvent(name:"WIPING_LOAFWALLET_DATA")
+    
+    let activityIndicator = UIActivityIndicatorView(frame: CGRect.zero)
+    activityIndicator.activityIndicatorViewStyle = .whiteLarge
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    activityIndicator.startAnimating()
+    
+    let wipeView = UIView(frame: CGRect.zero)
+    wipeView.translatesAutoresizingMaskIntoConstraints = false
+    wipeView.backgroundColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.9)
+    
+    
+    let wipeLabel = UILabel(frame: CGRect.zero)
+    wipeLabel.translatesAutoresizingMaskIntoConstraints = false
+    wipeLabel.font = UIFont.customBold(size: 17)
+    wipeLabel.text = S.WipeWallet.wipingWalletAndPIN
+    wipeLabel.textAlignment = .center
+    wipeLabel.textColor = .white
+    
+    self.view.addSubview(wipeView)
+    self.view.addSubview(wipeLabel)
+    self.view.addSubview(activityIndicator)
+
+    wipeView.constrain([
+      wipeView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+      wipeView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+      wipeView.topAnchor.constraint(equalTo: self.view.topAnchor),
+      wipeView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+      ])
+    wipeLabel.constrain([
+      wipeLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+      wipeLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -60),
+      wipeLabel.widthAnchor.constraint(equalToConstant:260),
+      wipeLabel.heightAnchor.constraint(equalToConstant:25),
+      ])
+    activityIndicator.constrain([
+      activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+      activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -10),
+      ])
+   }
+  
+  
+   private func registerLogEvent(name:String) {
+    Answers.logCustomEvent(withName: name, customAttributes: ["timeStamp":Date(),"deviceID":UIDevice.current.identifierForVendor?.uuidString ?? "NODEVICEID"])
+   }
+  
+  
+   override var preferredStatusBarStyle: UIStatusBarStyle {
         if disabledView.superview == nil {
             return .lightContent
         } else {
