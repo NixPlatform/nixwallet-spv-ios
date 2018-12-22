@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 source 'https://github.com/CocoaPods/Specs.git'
-workspace 'loafwallet.xcworkspace'
-project 'loafwallet.xcodeproj', 'Development' => :debug,'Release' => :release
+workspace 'nixwallet.xcworkspace'
+project 'nixwallet.xcodeproj', 'Development' => :debug,'Release' => :release
 use_frameworks!
 
 
@@ -15,32 +15,32 @@ end
 def shared_watchOS_pods
 end
 
-target 'loafwallet' do
+target 'nixwallet' do
   platform :ios, '10.0'
   shared_pods  
 end
 
-target 'loafwallet WatchKit App' do
+target 'nixwallet WatchKit App' do
   platform :watchos, '4.0'
   inherit! :search_paths
   shared_watchOS_pods
 end
 
-target 'loafwallet WatchKit Extension' do
+target 'nixwallet WatchKit Extension' do
   platform :watchos, '4.0'
   inherit! :search_paths
   shared_watchOS_pods
 end
 
-target 'loafwallet-dev' do
+target 'nixwallet-dev' do
   platform :ios, '10.0'
   shared_pods
   
-  target 'loafwalletTests' do
+  target 'nixwalletTests' do
     inherit! :search_paths
   end
   
-  target 'loafwalletUITests' do
+  target 'nixwalletUITests' do
     inherit! :search_paths
   end
   
