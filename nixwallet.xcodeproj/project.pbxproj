@@ -678,6 +678,7 @@
 		CEF61B161ED2056D00C7EA6A /* NumberFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF61B151ED2056D00C7EA6A /* NumberFormatter+Additions.swift */; };
 		CEFFA2D11EB3BD730085C5D1 /* LoadingIndicator.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFFA2D01EB3BD730085C5D1 /* LoadingIndicator.xcassets */; };
 		D011B35DDA2A3B96CB1DAB21 /* Pods_loafwallet_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0768BB424C2D05F0257A76 /* Pods_loafwallet_dev.framework */; };
+		EEC89BB07E51215D9DC4E70F /* Pods_nixwallet_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3442A47F21CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2037,6 +2038,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1031E9FCF8CE888039E776FC /* Pods_nixwallet_WatchKit_App.framework in Frameworks */,
+				EEC89BB07E51215D9DC4E70F /* Pods_nixwallet_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
