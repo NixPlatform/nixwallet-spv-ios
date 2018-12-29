@@ -21,6 +21,7 @@ class LoginBackgroundTriangle : UIView {
     private let vertexLocation: CGFloat //A percentage value (0.0->1.0) of the right vertex's vertical location
 
     override func layoutSubviews() {
+        /*
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 0, y: 0))
         bezierPath.addLine(to: CGPoint(x: bounds.maxX, y: bounds.height*vertexLocation))
@@ -32,13 +33,14 @@ class LoginBackgroundTriangle : UIView {
         layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         layer.shadowRadius = 4.0
         layer.shadowOpacity = 1.0
+         */
     }
 
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.move(to: CGPoint(x: 0, y: 0))
-        context.addLine(to: CGPoint(x: rect.maxX, y: bounds.height*vertexLocation))
-        context.addLine(to: CGPoint(x: 0, y: rect.maxY))
+        //context.addLine(to: CGPoint(x: rect.maxX, y: bounds.height*vertexLocation))
+        //context.addLine(to: CGPoint(x: 0, y: rect.maxY))
         context.closePath()
         context.clip()
         let colorSpace = CGColorSpaceCreateDeviceRGB()

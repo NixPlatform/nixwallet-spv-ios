@@ -20,7 +20,7 @@ enum S {
         static func currencyButtonTitle(maxDigits: Int) -> String {
             switch maxDigits {
             case 2:
-                return "photons\(S.Symbols.narrowSpace)(m\(S.Symbols.lites))"
+                return "nixtoshis\(S.Symbols.narrowSpace)(m\(S.Symbols.photons))"
             case 5:
                 return "milli NIX\(S.Symbols.narrowSpace)(\(S.Symbols.lites))"
             case 8:
