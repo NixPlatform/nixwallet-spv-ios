@@ -416,7 +416,7 @@ class ModalPresenter : Subscriber, Trackable {
                     let sections = ["Network"]
                     let advancedSettings = [
                         "Network": [
-                            Setting(title: "Litecoin Nodes", callback: {
+                            Setting(title: "NIX Nodes", callback: {
                                 let nodeSelector = NodeSelectorViewController(walletManager: walletManager)
                                 settingsNav.pushViewController(nodeSelector, animated: true)
                             })

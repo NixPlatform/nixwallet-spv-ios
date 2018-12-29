@@ -33,12 +33,12 @@ struct C {
     static let secondsInDay: TimeInterval = 86400
     static let maxMoney: UInt64 = 84000000*100000000
     static let satoshis: UInt64 = 100000000
-    static let walletQueue = "com.litecoin.walletqueue"
-    static let btcCurrencyCode = "LTC"
+    static let walletQueue = "com.nix.walletqueue"
+    static let btcCurrencyCode = "NIX"
     static let null = "(null)"
     static let maxMemoLength = 250
-    static let feedbackEmail = "contact@loafwallet.org"
-    static let reviewLink = "https://itunes.apple.com/app/loafwallet-litecoin-wallet/id1119332592?action=write-review"
+    static let feedbackEmail = "development@nixplatform.io"
+    static let reviewLink = "https://itunes.apple.com/app/nixwallet-nix-wallet/id1119332592?action=write-review"
     static var standardPort: Int {
         return E.isTestnet ? 19335 : 9333
     }
