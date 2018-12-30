@@ -29,7 +29,26 @@ class ExchangeUpdater : Subscriber {
             completion()
         }
     }
+    
+    /*
+    func refresha(completion: @escaping () -> Void) {
+        
+        walletManager.apiClient?.nixMultiplier{multiplier, error in
+            guard let ratio_to_btc : Double = multiplier else { completion(); return }
+            self.walletManager.apiClient?.exchangeRatesNix(code: "NIX", isFallback: false, ratio_to_btc, { rates,
+                ratio_to_btc, error in
+                
+                guard let currentRate = rates.first( where: { $0.code == self.store.state.defaultCurrencyCode }) else { completion(); return }
+                let aRate = Rate(code: currentRate.code, name: currentRate.name, rate: currentRate.rate * ratio_to_btc)
+                
+                self.store.perform(action: ExchangeRates.setRates(currentRate: aRate, rates: rates))
 
+                completion()
+            })
+        }
+    }
+    */
+    
     //MARK: - Private
     let store: Store
     let walletManager: WalletManager

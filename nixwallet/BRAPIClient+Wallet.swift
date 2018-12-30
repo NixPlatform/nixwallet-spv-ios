@@ -5,7 +5,6 @@
 //  Created by Samuel Sutch on 4/2/17.
 //  Copyright © 2017 breadwallet LLC. All rights reserved.
 //
-
 import Foundation
 
 private let ratesURL = "https://nixwallet.nixplatform.io/api/v1/rates"
@@ -89,9 +88,9 @@ extension BRAPIClient {
         dataTaskWithRequest(req as URLRequest, authenticated: true, retryCount: 0) { (dat, resp, er) in
             let dat2 = String(data: dat ?? Data(), encoding: .utf8)
             self.log("save push token resp: \(String(describing: resp)) data: \(String(describing: dat2))")
-        }.resume()
+            }.resume()
     }
-
+    
     func deletePushNotificationToken(_ token: Data) {
         var req = URLRequest(url: url("/me/push-devices/apns/\(token.hexString)"))
         req.httpMethod = "DELETE"
@@ -103,9 +102,9 @@ extension BRAPIClient {
                     self.log("deleted old token")
                 }
             }
-        }.resume()
+            }.resume()
     }
-
+    
     func publishBCashTransaction(_ txData: Data, callback: @escaping (String?) -> Void) {
         var req = URLRequest(url: url("/bch/publish-transaction"))
         req.httpMethod = "POST"
@@ -121,7 +120,7 @@ extension BRAPIClient {
                     callback("\(statusCode)")
                 }
             }
-        }.resume()
+            }.resume()
     }
 }
 
