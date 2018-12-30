@@ -14,6 +14,8 @@ Unlike other iOS Nix wallets, **NixWallet** is a standalone Nix client. It conne
 
 ### Desgined with new users in mind
 
+![screenshots](/images/screenshots.jpg)
+
 Simplicity and ease-of-use is **NixWallet**'s core design principle. A simple recovery phrase (which we call a paper key) is all that is needed to restore the user's wallet if they ever lose or replace their device. **LoafWallet** is [deterministic](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), which means the user's balance and transaction history can be recovered just from the paper key.
 
 ### Features
