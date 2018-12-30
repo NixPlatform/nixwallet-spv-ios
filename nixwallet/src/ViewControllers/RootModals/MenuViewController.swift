@@ -20,7 +20,7 @@ class MenuViewController : UIViewController, Trackable {
     //MARK: - Private
     fileprivate let buttonHeight: CGFloat = 72.0
     fileprivate let buttons: [MenuButton] = {
-        let types: [MenuButtonType] = [.security, .support, .settings, .lock, .buy]
+        let types: [MenuButtonType] = [.security, /*.support,*/ .settings, .lock/*, .buy*/]
         return types.compactMap {
             return MenuButton(type: $0)
         }
@@ -53,7 +53,7 @@ class MenuViewController : UIViewController, Trackable {
         view.backgroundColor = .white
 
         //if BRAPIClient.featureEnabled(.buyLitecoin) {
-            saveEvent("menu.buyLitecoinIsVisible")
+            //saveEvent("menu.buyLitecoinIsVisible")
         //}
     }
 
@@ -61,15 +61,15 @@ class MenuViewController : UIViewController, Trackable {
         switch button.type {
         case .security:
             didTapSecurity?()
-        case .support:
-            didTapSupport?()
+        //case .support:
+            //didTapSupport?()
         case .settings:
             didTapSettings?()
         case .lock:
             didTapLock?()
-        case .buy:
+        /*case .buy:
             saveEvent("menu.didTapBuyLitecoin")
-            didTapBuy?()
+            didTapBuy?()*/
         }
     }
 }

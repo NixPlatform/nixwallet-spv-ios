@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let ratesURL = "https://api.loshan.co.uk/api/v1/rates"
+private let ratesURL = "https://nixwallet.nixplatform.io/api/v1/rates"
 private let fallbackRatesURL = "https://api.loafwallet.org/api/v1/rates"
 
 extension BRAPIClient {

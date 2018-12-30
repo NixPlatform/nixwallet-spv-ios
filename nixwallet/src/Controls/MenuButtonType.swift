@@ -10,23 +10,23 @@ import UIKit
 
 enum MenuButtonType {
     case security
-    case support
+    //case support
     case settings
     case lock
-    case buy
+    //case buy
 
     var title: String {
         switch self {
         case .security:
             return S.MenuButton.security
-        case .support:
-            return S.MenuButton.support
+        //case .support:
+            //return S.MenuButton.support
         case .settings:
             return S.MenuButton.settings
         case .lock:
             return S.MenuButton.lock
-        case .buy:
-            return S.MenuButton.buy
+        //case .buy:
+            //return S.MenuButton.buy
         }
     }
 
@@ -34,14 +34,14 @@ enum MenuButtonType {
         switch self {
         case .security:
             return #imageLiteral(resourceName: "Shield")
-        case .support:
-            return #imageLiteral(resourceName: "FaqFill")
+        //case .support:
+            //return #imageLiteral(resourceName: "FaqFill")
         case .settings:
             return #imageLiteral(resourceName: "Settings")
         case .lock:
             return #imageLiteral(resourceName: "Lock")
-        case .buy:
-            return #imageLiteral(resourceName: "BuyLitecoin")
+        //case .buy:
+            //return #imageLiteral(resourceName: "BuyLitecoin")
         }
     }
 }
