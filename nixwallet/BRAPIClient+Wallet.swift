@@ -9,6 +9,8 @@ import Foundation
 
 private let ratesURL = "https://nixwallet.nixplatform.io/api/v1/rates"
 private let fallbackRatesURL = "https://api.loafwallet.org/api/v1/rates"
+private let nixfallbackRatesURL = "https://bitpay.com/api/rates"
+private let nixMultiplierURL = "https://api.coinmarketcap.com/v1/ticker/nix/"
 
 extension BRAPIClient {
     func feePerKb(_ handler: @escaping (_ fees: Fees, _ error: String?) -> Void) {
@@ -61,6 +63,63 @@ extension BRAPIClient {
                     handler([], "Error fetching from fallback url")
                 } else {
                     self.exchangeRates(isFallback: true, handler)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func nixMultiplier(_ handler: @escaping (_ mult: Double, _ error: String?) -> Void) {
+        let request = URLRequest(url: URL(string: nixMultiplierURL)!)
+        let task = dataTaskWithRequest(request) { (data, response, error) in
+            do {
+                
+                if error == nil, let data = data,
+                    let parsedData = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String:Any]] {
+                    guard let arr = parsedData.first else {
+                        return handler(0.00, "\(self.nixMultiplier) didn't return an array")
+                    }
+                    guard let ratio : Double = Double(arr["price_btc"] as! String) else {
+                        return handler(0.00, "Error getting from arr")
+                    }
+                    print("\(ratio)");
+                    return handler(ratio, nil)
+                } else {
+                    return handler(0.00, "Error fetching from Raven multiplier url")
+                }
+                
+                
+            } catch let error {
+                return handler(0.00, "price_btc data error caught \(error)");
+            }
+        }
+        task.resume()
+    }
+    
+    func exchangeRatesNix(code: String, isFallback: Bool = false, _ ratio : Double, _ handler: @escaping (_ rates: [Rate],
+        _ multiplier: Double, _ error: String?) -> Void) {
+        let param = ""
+        let request = isFallback ? URLRequest(url: URL(string: nixfallbackRatesURL)!) : URLRequest(url: url("/rates\(param)"))
+        let task = dataTaskWithRequest(request) { (data, response, error) in
+            if error == nil, let data = data,
+                let parsedData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                if isFallback {
+                    guard let array = parsedData as? [Any] else {
+                        return handler([], 1.0, "/rates didn't return an array")
+                    }
+                    handler(array.compactMap { Rate(dictionary: $0, ratio: ratio) }, 1.0, nil)
+                } else {
+                    guard let dict = parsedData as? [String: Any],
+                        let array = dict["body"] as? [Any] else {
+                            return self.exchangeRatesNix(code: code, isFallback: true, ratio, handler)
+                    }
+                    handler(array.compactMap { Rate(dictionary: $0, ratio: ratio) }, 1.0, nil)
+                }
+            } else {
+                if isFallback {
+                    handler([], 1.0, "Error fetching from fallback url")
+                } else {
+                    self.exchangeRatesNix(code: code, isFallback: true, ratio, handler)
                 }
             }
         }

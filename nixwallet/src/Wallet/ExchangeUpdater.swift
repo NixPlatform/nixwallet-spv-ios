@@ -22,6 +22,7 @@ class ExchangeUpdater : Subscriber {
         })
     }
 
+    /*
     func refresh(completion: @escaping () -> Void) {
         walletManager.apiClient?.exchangeRates { rates, error in
             guard let currentRate = rates.first( where: { $0.code == self.store.state.defaultCurrencyCode }) else { completion(); return }
@@ -29,9 +30,9 @@ class ExchangeUpdater : Subscriber {
             completion()
         }
     }
+    */
     
-    /*
-    func refresha(completion: @escaping () -> Void) {
+    func refresh(completion: @escaping () -> Void) {
         
         walletManager.apiClient?.nixMultiplier{multiplier, error in
             guard let ratio_to_btc : Double = multiplier else { completion(); return }
@@ -47,7 +48,7 @@ class ExchangeUpdater : Subscriber {
             })
         }
     }
-    */
+ 
     
     //MARK: - Private
     let store: Store

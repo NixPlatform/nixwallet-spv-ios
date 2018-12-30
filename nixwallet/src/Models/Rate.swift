@@ -62,6 +62,14 @@ extension Rate {
         self.init(code: code, name: name, rate: rate)
     }
 
+    init?(dictionary: Any, ratio: Double) {
+        guard let dictionary = dictionary as? [String: Any] else { return nil }
+        guard let code = dictionary["code"] as? String else { return nil }
+        guard let name = dictionary["name"] as? String else { return nil }
+        guard let rate = dictionary["rate"] as? Double else { return nil }
+        self.init(code: code, name: name, rate: rate * ratio)
+    }
+    
     var dictionary: [String: Any] {
         return [
             "code": code,
