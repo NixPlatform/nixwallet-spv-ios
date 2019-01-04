@@ -6,7 +6,7 @@ NixWallet is the best way to get started with Nix. Our simple, streamlined desig
 
 ### Completely decentralized
 
-Unlike other iOS Nix wallets, **NixWallet** is a standalone Nix client. It connects directly to the Nix network using [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Header-Only_Clients) mode, and doesn't rely on servers that can be hacked or disabled. Even if LoafWallet is removed from the App Store, the app will continue to function, allowing users to access their money at any time.
+Unlike other iOS Nix wallets, **NixWallet** is a standalone Nix client. It connects directly to the Nix network using [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Header-Only_Clients) mode, and doesn't rely on servers that can be hacked or disabled. Even if NixWallet is removed from the App Store, the app will continue to function, allowing users to access their money at any time.
 
 ### Cutting-edge security
 
@@ -16,7 +16,7 @@ Unlike other iOS Nix wallets, **NixWallet** is a standalone Nix client. It conne
 
 ![screenshots](/images/screenshots.jpg)
 
-Simplicity and ease-of-use is **NixWallet**'s core design principle. A simple recovery phrase (which we call a paper key) is all that is needed to restore the user's wallet if they ever lose or replace their device. **LoafWallet** is [deterministic](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), which means the user's balance and transaction history can be recovered just from the paper key.
+Simplicity and ease-of-use is **NixWallet**'s core design principle. A simple recovery phrase (which we call a paper key) is all that is needed to restore the user's wallet if they ever lose or replace their device. **NixWallet** is [deterministic](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), which means the user's balance and transaction history can be recovered just from the paper key.
 
 ### Features
 
