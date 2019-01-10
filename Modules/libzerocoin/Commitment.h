@@ -23,8 +23,10 @@
 // A 512-bit security parameter for the statistical ZK PoK.
 #define COMMITMENT_EQUALITY_SECMARGIN       512
 
-namespace libzerocoin {
 
+namespace libzerocoin {
+    
+    
 /**
  * A commitment, complete with contents and opening randomness.
  * These should remain secret. Publish only the commitment value.

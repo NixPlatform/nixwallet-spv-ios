@@ -328,22 +328,6 @@
 		24D91D0B2166923E0077A619 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D91D0A2166923E0077A619 /* UserNotifications.framework */; };
 		24D91D0C216692450077A619 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D91D0A2166923E0077A619 /* UserNotifications.framework */; };
 		24D91D0E2166A5480077A619 /* TestnetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D91D0D2166A5480077A619 /* TestnetData.swift */; };
-		340F3BAF21DF3FEA00D2F667 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 340F385821DEC38D00D2F667 /* libc++.tbd */; };
-		340F3C0C21DF415500D2F667 /* SpendMetaData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BEA21DF415500D2F667 /* SpendMetaData.cpp */; };
-		340F3C0D21DF415500D2F667 /* AccumulatorProofOfKnowledge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BEB21DF415500D2F667 /* AccumulatorProofOfKnowledge.cpp */; };
-		340F3C0E21DF415500D2F667 /* ParallelTasks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BEE21DF415500D2F667 /* ParallelTasks.cpp */; };
-		340F3C0F21DF415500D2F667 /* Coin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BF021DF415500D2F667 /* Coin.cpp */; };
-		340F3C1021DF415500D2F667 /* paramgen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BF121DF415500D2F667 /* paramgen.cpp */; };
-		340F3C1121DF415500D2F667 /* Accumulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BF221DF415500D2F667 /* Accumulator.cpp */; };
-		340F3C1221DF415500D2F667 /* Commitment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BF321DF415500D2F667 /* Commitment.cpp */; };
-		340F3C1321DF415500D2F667 /* SerialNumberSignatureOfKnowledge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BF521DF415500D2F667 /* SerialNumberSignatureOfKnowledge.cpp */; };
-		340F3C1421DF415500D2F667 /* ParamGeneration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BF721DF415500D2F667 /* ParamGeneration.cpp */; };
-		340F3C1521DF415500D2F667 /* CoinSpend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3BFB21DF415500D2F667 /* CoinSpend.cpp */; };
-		340F3C1621DF415500D2F667 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3C0421DF415500D2F667 /* hash.cpp */; };
-		340F3C1721DF415500D2F667 /* Params.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3C0A21DF415500D2F667 /* Params.cpp */; };
-		340F3C1A21DF418C00D2F667 /* libzerocoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 340F3BB421DF40FF00D2F667 /* libzerocoin.a */; };
-		340F3C2821DF50AC00D2F667 /* ripemd160.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340F3C2621DF50AC00D2F667 /* ripemd160.cpp */; };
-		340F3C2921DF57CB00D2F667 /* libzerocoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 340F3BB421DF40FF00D2F667 /* libzerocoin.a */; };
 		34325EFA63ACDC9EF8B2DCB4 /* Pods_nixwallet_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392BA46FD1FC0BCE08B1EFE0 /* Pods_nixwallet_dev.framework */; };
 		3442A48021CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3442A47F21CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework */; };
 		3442A48221CDD6950039920F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9A9451DF61945000F0016 /* Extensions.swift */; };
@@ -740,20 +724,6 @@
 			remoteGlobalIDString = 22A9A9951DF63426000F0016;
 			remoteInfo = libbz2;
 		};
-		340F3C1821DF417C00D2F667 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75A2A7881DA5934300A983D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 340F3BB321DF40FF00D2F667;
-			remoteInfo = zerocoin;
-		};
-		340F3C2A21DF57FC00D2F667 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75A2A7881DA5934300A983D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 340F3BB321DF40FF00D2F667;
-			remoteInfo = zerocoin;
-		};
 		752FB04E1DF8BF5C009086FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 75A2A7881DA5934300A983D8 /* Project object */;
@@ -878,15 +848,6 @@
 				754AE0B81DFCA870007FD001 /* sqlite3.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		340F3BB221DF40FF00D2F667 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		755CD9C21DAA18420075898E /* CopyFiles */ = {
@@ -1164,7 +1125,6 @@
 		24D91D0D2166A5480077A619 /* TestnetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestnetData.swift; sourceTree = "<group>"; };
 		300DE2E99F97A7A75836F477 /* Pods-nixwalletUITests.testnet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nixwalletUITests.testnet.xcconfig"; path = "Pods/Target Support Files/Pods-nixwalletUITests/Pods-nixwalletUITests.testnet.xcconfig"; sourceTree = "<group>"; };
 		340F385821DEC38D00D2F667 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		340F3BB421DF40FF00D2F667 /* libzerocoin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzerocoin.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		340F3BEA21DF415500D2F667 /* SpendMetaData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpendMetaData.cpp; sourceTree = "<group>"; };
 		340F3BEB21DF415500D2F667 /* AccumulatorProofOfKnowledge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccumulatorProofOfKnowledge.cpp; sourceTree = "<group>"; };
 		340F3BEC21DF415500D2F667 /* Zerocoin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zerocoin.h; sourceTree = "<group>"; };
@@ -1207,6 +1167,8 @@
 		340F3C2521DF50AC00D2F667 /* ripemd160.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ripemd160.h; sourceTree = "<group>"; };
 		340F3C2621DF50AC00D2F667 /* ripemd160.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ripemd160.cpp; sourceTree = "<group>"; };
 		340F3C2721DF50AC00D2F667 /* endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endian.h; sourceTree = "<group>"; };
+		3428434421E075D90038ABC1 /* libzerocoin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libzerocoin.cpp; sourceTree = "<group>"; };
+		3428434521E075D90038ABC1 /* libzerocoin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libzerocoin.h; sourceTree = "<group>"; };
 		3442A47F21CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_nixwallet_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DDAFE665F7D5B0FB5310D4 /* Pods-nixwalletUITests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nixwalletUITests.testflight.xcconfig"; path = "Pods/Target Support Files/Pods-nixwalletUITests/Pods-nixwalletUITests.testflight.xcconfig"; sourceTree = "<group>"; };
 		392BA46FD1FC0BCE08B1EFE0 /* Pods_nixwallet_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nixwallet_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2129,7 +2091,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340F3C2921DF57CB00D2F667 /* libzerocoin.a in Frameworks */,
 				24D91D0C216692450077A619 /* UserNotifications.framework in Frameworks */,
 				1B86CE932091528B00BCE82E /* WebKit.framework in Frameworks */,
 				1B86CE942091528B00BCE82E /* Security.framework in Frameworks */,
@@ -2177,13 +2138,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340F3BB121DF40FF00D2F667 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		752FB0431DF8BE6B009086FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2210,8 +2164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340F3C1A21DF418C00D2F667 /* libzerocoin.a in Frameworks */,
-				340F3BAF21DF3FEA00D2F667 /* libc++.tbd in Frameworks */,
 				24D91D0B2166923E0077A619 /* UserNotifications.framework in Frameworks */,
 				22A9A9661DF61FEE000F0016 /* WebKit.framework in Frameworks */,
 				22A9A9641DF61FE7000F0016 /* Security.framework in Frameworks */,
@@ -2671,6 +2623,8 @@
 				340F3C0921DF415500D2F667 /* ParamGeneration.h */,
 				340F3C0A21DF415500D2F667 /* Params.cpp */,
 				340F3C0B21DF415500D2F667 /* CoinSpend.h */,
+				3428434421E075D90038ABC1 /* libzerocoin.cpp */,
+				3428434521E075D90038ABC1 /* libzerocoin.h */,
 			);
 			name = libzerocoin;
 			path = Modules/libzerocoin;
@@ -3423,7 +3377,6 @@
 				1B86CEFA209154F800BCE82E /* MessagesExtension-dev.appex */,
 				1B86CF0C209154FA00BCE82E /* TodayExtension-dev.appex */,
 				1B86CF19209154FB00BCE82E /* NotificationServiceExtension-dev.appex */,
-				340F3BB421DF40FF00D2F667 /* libzerocoin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4067,7 +4020,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				340F3C2B21DF57FC00D2F667 /* PBXTargetDependency */,
 				1BA9C9A320916230005ADF44 /* PBXTargetDependency */,
 				1BA9C9A120916226005ADF44 /* PBXTargetDependency */,
 				1B86CDBD2091528B00BCE82E /* PBXTargetDependency */,
@@ -4148,23 +4100,6 @@
 			productReference = 22A9A9961DF63426000F0016 /* libbz2.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		340F3BB321DF40FF00D2F667 /* zerocoin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 340F3BB821DF40FF00D2F667 /* Build configuration list for PBXNativeTarget "zerocoin" */;
-			buildPhases = (
-				340F3BB021DF40FF00D2F667 /* Sources */,
-				340F3BB121DF40FF00D2F667 /* Frameworks */,
-				340F3BB221DF40FF00D2F667 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = zerocoin;
-			productName = zerocoin;
-			productReference = 340F3BB421DF40FF00D2F667 /* libzerocoin.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		752FB0411DF8BE6B009086FB /* sqlite3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 752FB0471DF8BE6B009086FB /* Build configuration list for PBXNativeTarget "sqlite3" */;
@@ -4237,7 +4172,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				340F3C1921DF417C00D2F667 /* PBXTargetDependency */,
 				759DA0BD1DAC369C008CC49B /* PBXTargetDependency */,
 				75A2A7BB1DA5934300A983D8 /* PBXTargetDependency */,
 				75A2A8131DA5936F00A983D8 /* PBXTargetDependency */,
@@ -4425,10 +4359,6 @@
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
-					340F3BB321DF40FF00D2F667 = {
-						CreatedOnToolsVersion = 10.0;
-						ProvisioningStyle = Automatic;
-					};
 					752FB0411DF8BE6B009086FB = {
 						ProvisioningStyle = Automatic;
 					};
@@ -4551,7 +4481,6 @@
 				759DA0D71DAC8668008CC49B /* submodules */,
 				22A9A9951DF63426000F0016 /* libbz2 */,
 				752FB0411DF8BE6B009086FB /* sqlite3 */,
-				340F3BB321DF40FF00D2F667 /* zerocoin */,
 			);
 		};
 /* End PBXProject section */
@@ -5144,26 +5073,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340F3BB021DF40FF00D2F667 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				340F3C1721DF415500D2F667 /* Params.cpp in Sources */,
-				340F3C1521DF415500D2F667 /* CoinSpend.cpp in Sources */,
-				340F3C0D21DF415500D2F667 /* AccumulatorProofOfKnowledge.cpp in Sources */,
-				340F3C0E21DF415500D2F667 /* ParallelTasks.cpp in Sources */,
-				340F3C1021DF415500D2F667 /* paramgen.cpp in Sources */,
-				340F3C1421DF415500D2F667 /* ParamGeneration.cpp in Sources */,
-				340F3C1621DF415500D2F667 /* hash.cpp in Sources */,
-				340F3C1121DF415500D2F667 /* Accumulator.cpp in Sources */,
-				340F3C1221DF415500D2F667 /* Commitment.cpp in Sources */,
-				340F3C1321DF415500D2F667 /* SerialNumberSignatureOfKnowledge.cpp in Sources */,
-				340F3C0C21DF415500D2F667 /* SpendMetaData.cpp in Sources */,
-				340F3C2821DF50AC00D2F667 /* ripemd160.cpp in Sources */,
-				340F3C0F21DF415500D2F667 /* Coin.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		752FB0421DF8BE6B009086FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -5649,16 +5558,6 @@
 			target = 22A9A9951DF63426000F0016 /* libbz2 */;
 			targetProxy = 22A9A99B1DF63426000F0016 /* PBXContainerItemProxy */;
 		};
-		340F3C1921DF417C00D2F667 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 340F3BB321DF40FF00D2F667 /* zerocoin */;
-			targetProxy = 340F3C1821DF417C00D2F667 /* PBXContainerItemProxy */;
-		};
-		340F3C2B21DF57FC00D2F667 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 340F3BB321DF40FF00D2F667 /* zerocoin */;
-			targetProxy = 340F3C2A21DF57FC00D2F667 /* PBXContainerItemProxy */;
-		};
 		752FB04F1DF8BF5C009086FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 752FB0411DF8BE6B009086FB /* sqlite3 */;
@@ -5847,7 +5746,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
@@ -5877,7 +5776,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
@@ -5906,7 +5805,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
@@ -5934,7 +5833,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
@@ -5958,7 +5857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/MessagesExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -5974,7 +5873,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/MessagesExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -5989,7 +5888,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/MessagesExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6004,7 +5903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/MessagesExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6019,7 +5918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6033,7 +5932,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6046,7 +5945,7 @@
 		1B86CF0A209154FA00BCE82E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6059,7 +5958,7 @@
 		1B86CF0B209154FA00BCE82E /* Testflight */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6073,7 +5972,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/NotificationServiceExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6088,7 +5987,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/NotificationServiceExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6102,7 +6001,7 @@
 		1B86CF17209154FB00BCE82E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/NotificationServiceExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6116,7 +6015,7 @@
 		1B86CF18209154FB00BCE82E /* Testflight */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/NotificationServiceExtension/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6176,185 +6075,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		340F3BB921DF40FF00D2F667 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/include/,
-					"${SRCROOT}/Modules/loafwallet-core/secp256k1",
-					"${SRCROOT}/Modules/libzerocoin",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/lib/,
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lcrypto",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Development;
-		};
-		340F3BBA21DF40FF00D2F667 /* Testnet */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/include/,
-					"${SRCROOT}/Modules/loafwallet-core/secp256k1",
-					"${SRCROOT}/Modules/libzerocoin",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/lib/,
-				);
-				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lcrypto",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Testnet;
-		};
-		340F3BBB21DF40FF00D2F667 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/include/,
-					"${SRCROOT}/Modules/loafwallet-core/secp256k1",
-					"${SRCROOT}/Modules/libzerocoin",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/lib/,
-				);
-				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lcrypto",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		340F3BBC21DF40FF00D2F667 /* Testflight */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/include/,
-					"${SRCROOT}/Modules/loafwallet-core/secp256k1",
-					"${SRCROOT}/Modules/libzerocoin",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/Cellar/openssl/1.0.2p/include/,
-					/usr/local/lib/,
-				);
-				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lcrypto",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Testflight;
 		};
 		752FB0481DF8BE6B009086FB /* Development */ = {
 			isa = XCBuildConfiguration;
@@ -6604,7 +6324,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.watchkitapp.watchkitextension;
@@ -6623,7 +6343,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.watchkitapp.watchkitextension;
@@ -6643,7 +6363,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				IBSC_MODULE = nixwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit App/Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -6663,7 +6383,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				IBSC_MODULE = nixwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit App/Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -6685,24 +6405,28 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = nixwallet/nixwallet.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Modules/libzerocoin/crypto",
+					/usr/local/lib/,
 					/usr/local/Cellar/openssl/1.0.2p/lib,
 					"$(PROJECT_DIR)/Modules/libzerocoin/",
 				);
 				OTHER_SWIFT_FLAGS = "-DDebug $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -6716,24 +6440,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = nixwallet/nixwallet.entitlements;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Modules/libzerocoin/crypto",
+					/usr/local/lib/,
 					/usr/local/Cellar/openssl/1.0.2p/lib,
 					"$(PROJECT_DIR)/Modules/libzerocoin/",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -6746,7 +6474,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletTests;
@@ -6762,7 +6490,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletTests;
@@ -6778,7 +6506,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletUITests;
@@ -6793,7 +6521,7 @@
 			baseConfigurationReference = 08FE08AD1D69E8755F4BAD36 /* Pods-nixwalletUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletUITests;
@@ -6808,7 +6536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6822,7 +6550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6837,11 +6565,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.spv.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -6851,11 +6579,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.spv.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -6867,7 +6595,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6885,7 +6613,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6994,24 +6722,28 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = nixwallet/nixwallet.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Modules/libzerocoin/crypto",
+					/usr/local/lib/,
 					/usr/local/Cellar/openssl/1.0.2p/lib,
 					"$(PROJECT_DIR)/Modules/libzerocoin/",
 				);
 				OTHER_SWIFT_FLAGS = "-DDebug -DTestnet $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7025,7 +6757,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletTests;
@@ -7041,7 +6773,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletUITests;
@@ -7058,7 +6790,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				IBSC_MODULE = nixwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit App/Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -7078,7 +6810,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.watchkitapp.watchkitextension;
@@ -7096,7 +6828,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -7111,11 +6843,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.spv.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -7127,7 +6859,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -7304,24 +7036,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = nixwallet/nixwallet.entitlements;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Modules/libzerocoin/crypto",
+					/usr/local/lib/,
 					/usr/local/Cellar/openssl/1.0.2p/lib,
 					"$(PROJECT_DIR)/Modules/libzerocoin/",
 				);
 				OTHER_SWIFT_FLAGS = "-DTestflight -DDebug $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -7333,7 +7069,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletTests;
@@ -7348,7 +7084,7 @@
 			baseConfigurationReference = 35DDAFE665F7D5B0FB5310D4 /* Pods-nixwalletUITests.testflight.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = nixwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nix.nixwalletUITests;
@@ -7364,7 +7100,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				IBSC_MODULE = nixwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit App/Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -7383,7 +7119,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = "$(SRCROOT)/nixwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.watchkitapp.watchkitextension;
@@ -7400,7 +7136,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -7414,11 +7150,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.spv.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nix.nixwallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -7429,7 +7165,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2FU6A38Q95;
+				DEVELOPMENT_TEAM = 7HW44PFQMA;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -7592,17 +7328,6 @@
 				CEA7E6A81F0AAA84001F8C27 /* Testnet */,
 				22A9A9A11DF63426000F0016 /* Release */,
 				CEE0EF611EBF8D7F0018DB36 /* Testflight */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		340F3BB821DF40FF00D2F667 /* Build configuration list for PBXNativeTarget "zerocoin" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				340F3BB921DF40FF00D2F667 /* Development */,
-				340F3BBA21DF40FF00D2F667 /* Testnet */,
-				340F3BBB21DF40FF00D2F667 /* Release */,
-				340F3BBC21DF40FF00D2F667 /* Testflight */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

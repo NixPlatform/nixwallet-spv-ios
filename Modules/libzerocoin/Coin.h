@@ -20,6 +20,7 @@
 using namespace std;
 
 namespace libzerocoin {
+    class Params;
 
 enum  CoinDenomination {
     ZQ_ERROR = 0,

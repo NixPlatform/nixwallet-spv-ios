@@ -57,30 +57,30 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>litecoin</string>
+			<string>nix</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>litecoin</string>
+				<string>nix</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.litecoin.loafwallet</string>
+			<string>io.nix.nixwallet</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>loaf</string>
+				<string>nix</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>liteid</string>
+			<string>nixid</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>liteid</string>
+				<string>nixid</string>
 			</array>
 		</dict>
 	</array>
