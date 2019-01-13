@@ -328,9 +328,14 @@
 		24D91D0B2166923E0077A619 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D91D0A2166923E0077A619 /* UserNotifications.framework */; };
 		24D91D0C216692450077A619 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D91D0A2166923E0077A619 /* UserNotifications.framework */; };
 		24D91D0E2166A5480077A619 /* TestnetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D91D0D2166A5480077A619 /* TestnetData.swift */; };
+		3425E8AD21EAABA50014D0E6 /* BRGhostnode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3425E8AC21EAABA50014D0E6 /* BRGhostnode.c */; };
+		3425E8AE21EAABA50014D0E6 /* BRGhostnode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3425E8AC21EAABA50014D0E6 /* BRGhostnode.c */; };
 		34325EFA63ACDC9EF8B2DCB4 /* Pods_nixwallet_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392BA46FD1FC0BCE08B1EFE0 /* Pods_nixwallet_dev.framework */; };
 		3442A48021CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3442A47F21CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework */; };
 		3442A48221CDD6950039920F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9A9451DF61945000F0016 /* Extensions.swift */; };
+		34CE7D8621E9894D00BBFBCF /* MenuButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE7D8321E9894D00BBFBCF /* MenuButtonType.swift */; };
+		34CE7D8721E9894D00BBFBCF /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE7D8421E9894D00BBFBCF /* MenuButton.swift */; };
+		34CE7D8821E9894D00BBFBCF /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE7D8521E9894D00BBFBCF /* SegmentedButton.swift */; };
 		3F43298A5B3B32D7D1943BE9 /* Pods_nixwalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B5363D45BE1E4FFAACCA30 /* Pods_nixwalletTests.framework */; };
 		57120CC7F370211132ADE9C2 /* Pods_nixwallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C67ACE32853FFE81FF11482 /* Pods_nixwallet.framework */; };
 		7503773D1DF57428005EB8AE /* WalletManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7503773C1DF57428005EB8AE /* WalletManager+Auth.swift */; };
@@ -1167,9 +1172,14 @@
 		340F3C2521DF50AC00D2F667 /* ripemd160.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ripemd160.h; sourceTree = "<group>"; };
 		340F3C2621DF50AC00D2F667 /* ripemd160.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ripemd160.cpp; sourceTree = "<group>"; };
 		340F3C2721DF50AC00D2F667 /* endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endian.h; sourceTree = "<group>"; };
+		3425E8AB21EAABA50014D0E6 /* BRGhostnode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRGhostnode.h; sourceTree = "<group>"; };
+		3425E8AC21EAABA50014D0E6 /* BRGhostnode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BRGhostnode.c; sourceTree = "<group>"; };
 		3428434421E075D90038ABC1 /* libzerocoin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libzerocoin.cpp; sourceTree = "<group>"; };
 		3428434521E075D90038ABC1 /* libzerocoin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libzerocoin.h; sourceTree = "<group>"; };
 		3442A47F21CDCF0C0039920F /* Pods_nixwallet_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_nixwallet_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34CE7D8321E9894D00BBFBCF /* MenuButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonType.swift; sourceTree = "<group>"; };
+		34CE7D8421E9894D00BBFBCF /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		34CE7D8521E9894D00BBFBCF /* SegmentedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
 		35DDAFE665F7D5B0FB5310D4 /* Pods-nixwalletUITests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nixwalletUITests.testflight.xcconfig"; path = "Pods/Target Support Files/Pods-nixwalletUITests/Pods-nixwalletUITests.testflight.xcconfig"; sourceTree = "<group>"; };
 		392BA46FD1FC0BCE08B1EFE0 /* Pods_nixwallet_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nixwallet_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6D6B56FAD50D5F3093E3EC /* Pods-nixwalletTests.testnet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nixwalletTests.testnet.xcconfig"; path = "Pods/Target Support Files/Pods-nixwalletTests/Pods-nixwalletTests.testnet.xcconfig"; sourceTree = "<group>"; };
@@ -2279,6 +2289,8 @@
 				1BBAEC0B1F80237B0047DEA8 /* README.md */,
 				1BBAEC0C1F80237B0047DEA8 /* secp256k1 */,
 				1BBAEC711F80237C0047DEA8 /* test.c */,
+				3425E8AB21EAABA50014D0E6 /* BRGhostnode.h */,
+				3425E8AC21EAABA50014D0E6 /* BRGhostnode.c */,
 			);
 			name = "loafwallet-core";
 			path = "Modules/loafwallet-core";
@@ -2645,6 +2657,17 @@
 				340F3C0721DF415500D2F667 /* bignum.h */,
 			);
 			path = bitcoin_bignum;
+			sourceTree = "<group>";
+		};
+		34CE7D8221E9894D00BBFBCF /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				34CE7D8321E9894D00BBFBCF /* MenuButtonType.swift */,
+				34CE7D8421E9894D00BBFBCF /* MenuButton.swift */,
+				34CE7D8521E9894D00BBFBCF /* SegmentedButton.swift */,
+			);
+			name = Controls;
+			path = src/Controls;
 			sourceTree = "<group>";
 		};
 		755CD3831DAA0E3E0075898E /* unbound */ = {
@@ -3384,6 +3407,7 @@
 		75A2A7921DA5934300A983D8 /* nixwallet */ = {
 			isa = PBXGroup;
 			children = (
+				34CE7D8221E9894D00BBFBCF /* Controls */,
 				75A2A87C1DA59E4E00A983D8 /* nixwallet.entitlements */,
 				75A2A7931DA5934300A983D8 /* AppDelegate.swift */,
 				CE20C8F11DBAF71500C8397A /* ApplicationController.swift */,
@@ -4923,6 +4947,7 @@
 				1B86CE202091528B00BCE82E /* CustomTitleView.swift in Sources */,
 				1B86CE212091528B00BCE82E /* Prompt.swift in Sources */,
 				1B86CE222091528B00BCE82E /* SendAmountCell.swift in Sources */,
+				3425E8AD21EAABA50014D0E6 /* BRGhostnode.c in Sources */,
 				1B86CE232091528B00BCE82E /* BRKVStorePlugin.swift in Sources */,
 				1B86CE242091528B00BCE82E /* SegmentedButton.swift in Sources */,
 				1B86CE252091528B00BCE82E /* PhoneWCSessionManager.swift in Sources */,
@@ -5218,6 +5243,7 @@
 				CEE659E91F664C73001FF29D /* WelcomeViewController.swift in Sources */,
 				2228734F1E916FC30044BA15 /* BRAPIClient+Wallet.swift in Sources */,
 				CEAA9EA81DC3342E0066731D /* PinView.swift in Sources */,
+				3425E8AE21EAABA50014D0E6 /* BRGhostnode.c in Sources */,
 				CE1D84B61EAEB2F4002A5D7B /* UIBarButtonItem+Additions.swift in Sources */,
 				CE4B6C1A1E219CA600CF935B /* WalletCoordinator.swift in Sources */,
 				CE6D0E5C1E14BFA700137DF1 /* KeyboardNotificationInfo.swift in Sources */,
@@ -5261,6 +5287,7 @@
 				24B8FAC12160497C00A155B1 /* BuyCenterTableViewController.swift in Sources */,
 				CE0CD1591DBFBCF5004023DA /* ModalPresenter.swift in Sources */,
 				CEE20C2F1EA3E5820086F724 /* BlinkingView.swift in Sources */,
+				34CE7D8721E9894D00BBFBCF /* MenuButton.swift in Sources */,
 				CEC6AA441DEFCDE900EE5AFD /* ModalViewController.swift in Sources */,
 				CEEC70831E90C07C00EF788E /* Setting.swift in Sources */,
 				CE4B6C1C1E21A96D00CF935B /* LoadingProgressView.swift in Sources */,
@@ -5312,6 +5339,7 @@
 				CEC6AA461DEFCE9200EE5AFD /* MenuViewController.swift in Sources */,
 				CEEC707F1E8D6B4100EF788E /* SettingsViewController.swift in Sources */,
 				CEEE92F11EBA7CBA00B7AC9C /* RequestAmountViewController.swift in Sources */,
+				34CE7D8821E9894D00BBFBCF /* SegmentedButton.swift in Sources */,
 				CE8CD8DF1E2E825100785E02 /* VerifyPinViewController.swift in Sources */,
 				CE916E331EDA800E00D641D6 /* UserDefaultsUpdater.swift in Sources */,
 				CE20C9111DBE5B6F00C8397A /* Circle.swift in Sources */,
@@ -5370,6 +5398,7 @@
 				CE4DFB2E1E9C26DA0014009E /* ShareDataViewController.swift in Sources */,
 				CE1E5F261EF083A600BD0F72 /* StartImportViewController.swift in Sources */,
 				CE25BF931DFDA7A600BC67B6 /* MessageUIPresenter.swift in Sources */,
+				34CE7D8621E9894D00BBFBCF /* MenuButtonType.swift in Sources */,
 				CE20C90C1DBC59E600C8397A /* StartFlowPresenter.swift in Sources */,
 				CE20C8FC1DBB0F3A00C8397A /* UIColor+BRWAdditions.swift in Sources */,
 				CEA3626A1E01150D0061FC0E /* CGContext+Additions.swift in Sources */,

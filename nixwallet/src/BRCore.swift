@@ -648,6 +648,10 @@ class BRPeerManager {
         }
     }
     
+    func relayGhostnode(){
+        
+    }
+    
     // number of connected peers that have relayed the given unconfirmed transaction
     func relayCount(_ forTxHash: UInt256) -> Int {
         return BRPeerManagerRelayCount(cPtr, forTxHash)
