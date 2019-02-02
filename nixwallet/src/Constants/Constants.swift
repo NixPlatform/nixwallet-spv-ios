@@ -38,7 +38,7 @@ struct C {
     static let null = "(null)"
     static let maxMemoLength = 250
     static let feedbackEmail = "development@nixplatform.io"
-    static let reviewLink = "https://itunes.apple.com/app/nixwallet-nix-wallet/id1119332592?action=write-review"
+    static let reviewLink = "https://itunes.apple.com/us/app/nixwallet/id1448766958?action=write-review"
     static var standardPort: Int {
         return E.isTestnet ? 16214 : 6214
     }

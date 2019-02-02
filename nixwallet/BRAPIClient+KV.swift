@@ -104,6 +104,7 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
     func keys(_ completionFunc: @escaping ([(String, UInt64, Date, BRRemoteKVStoreError?)], BRRemoteKVStoreError?) -> ()) {
         var req = URLRequest(url: client.url("/kv/_all_keys"))
         req.httpMethod = "GET"
+        self.client.log("help")
         client.dataTaskWithRequest(req as URLRequest, authenticated: true, retryCount: 0) { (dat, resp, err) in
             if let err = err {
                 self.client.log("[KV] KEYS err=\(err)")
@@ -122,11 +123,14 @@ fileprivate class KVStoreAdaptor: BRRemoteKVStoreAdaptor {
                 let keyLen = UInt(dat.uInt32(atOffset: i))
                 i += UInt(MemoryLayout<UInt32>.size)
                 let range: Range<Int> = Int(i)..<Int(i + keyLen)
+                self.client.log("help1")
                 guard let key = NSString(data: dat.subdata(in: range),
                                          encoding: String.Encoding.utf8.rawValue) as String? else {
                                             self.client.log("Well crap. Failed to decode a string.")
                                             return completionFunc([], .unknown)
                 }
+ 
+                self.client.log("help2")
                 i += keyLen
                 let ver = dat.uInt64(atOffset: i)
                 i += UInt(MemoryLayout<UInt64>.size)

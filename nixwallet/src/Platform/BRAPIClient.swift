@@ -73,9 +73,9 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
     
     // host is the server(s) on which the API is hosted
     #if Testflight || Debug
-    var host = "api.loafwallet.org" // GitHub Pages currently doesn't support more than one domain per repo
+    var host = "api.nixwallet.org" // GitHub Pages currently doesn't support more than one domain per repo
     #else
-    var host = "api.loafwallet.org"
+    var host = "api.nixwallet.org"
     #endif
     
     // isFetchingAuth is set to true when a request is currently trying to renew authentication (the token)
@@ -163,7 +163,7 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
     
     private func decorateRequest(_ request: URLRequest) -> URLRequest {
         var actualRequest = request
-        actualRequest.setValue("\(E.isTestnet ? 1 : 0)", forHTTPHeaderField: "X-Litecoin-Testnet")
+        actualRequest.setValue("\(E.isTestnet ? 1 : 0)", forHTTPHeaderField: "X-NIX-Testnet")
         actualRequest.setValue("\((E.isTestFlight || E.isDebug) ? 1 : 0)", forHTTPHeaderField: "X-Testflight")
         actualRequest.setValue(Locale.current.identifier, forHTTPHeaderField: "Accept-Language")
         return actualRequest
