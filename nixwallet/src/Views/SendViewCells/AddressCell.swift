@@ -36,6 +36,7 @@ class AddressCell : UIView {
     let textField = UITextField()
     let paste = ShadowButton(title: S.Send.pasteLabel, type: .tertiary)
     let scan = ShadowButton(title: S.Send.scanLabel, type: .tertiary)
+    let ghost = ShadowButton(title: S.Send.ghostLabel, type: .tertiary)
     fileprivate let contentLabel = UILabel(font: .customBody(size: 14.0), color: .darkText)
     private let label = UILabel(font: .customBody(size: 16.0))
     fileprivate let gr = UITapGestureRecognizer()
@@ -56,6 +57,7 @@ class AddressCell : UIView {
         addSubview(border)
         addSubview(paste)
         addSubview(scan)
+        addSubview(ghost)
     }
 
     private func addConstraints() {
@@ -75,12 +77,17 @@ class AddressCell : UIView {
             tapView.topAnchor.constraint(equalTo: topAnchor),
             tapView.bottomAnchor.constraint(equalTo: bottomAnchor),
             tapView.trailingAnchor.constraint(equalTo: paste.leadingAnchor) ])
+        
+        ghost.constrain([
+            ghost.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -C.padding[2]),
+            ghost.centerYAnchor.constraint(equalTo: centerYAnchor) ])
         scan.constrain([
-            scan.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -C.padding[2]),
-            scan.centerYAnchor.constraint(equalTo: centerYAnchor) ])
+            scan.centerYAnchor.constraint(equalTo: centerYAnchor),
+            scan.trailingAnchor.constraint(equalTo: ghost.leadingAnchor, constant: -C.padding[1]) ])
         paste.constrain([
             paste.centerYAnchor.constraint(equalTo: centerYAnchor),
-            paste.trailingAnchor.constraint(equalTo: scan.leadingAnchor, constant: -C.padding[1]) ])
+            paste.trailingAnchor.constraint(equalTo: scan.leadingAnchor, constant: -C.padding[0]) ])
+        
         border.constrain([
             border.leadingAnchor.constraint(equalTo: leadingAnchor),
             border.bottomAnchor.constraint(equalTo: bottomAnchor),

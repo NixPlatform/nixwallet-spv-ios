@@ -447,6 +447,11 @@ class BRWallet {
         return BRWalletCreateTransaction(cPtr, forAmount, toAddress)
     }
     
+    // returns an unsigned transaction that sends the specified amount from the wallet to the given address
+    func createGhostTransaction(forAmount: UInt64, toAddress: String) -> BRTxRef? {
+        return BRWalletCreateTransaction(cPtr, forAmount, toAddress)
+    }
+    
     // returns an unsigned transaction that satisifes the given transaction outputs
     func createTxForOutputs(_ outputs: [BRTxOutput]) -> BRTxRef {
         return BRWalletCreateTxForOutputs(cPtr, outputs, outputs.count)

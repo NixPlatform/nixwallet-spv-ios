@@ -448,6 +448,39 @@ extension WalletManager : WalletAuthenticator {
         }
     }
     
+    // create a new wallet and return the 12 word wallet recovery phrase
+    // will append new data
+    private func addZerocoinMintData(newMintData: [zerocoin], pin: String) -> Bool? {
+        guard noWallet else { return nil }
+        guard authenticate(pin: pin) else { return false }
+        if newMintData.isEmpty == true { return false }
+
+        // wrapping in an autorelease pool ensures sensitive memory is wiped and released immediately
+        return autoreleasepool {
+            do {
+      
+                // for new storage, initialize the zerocoin array
+                if try keychainItem(key: KeychainKey.zerocoinData) as [zerocoin]? == nil {
+                    try setKeychainItem(key: KeychainKey.zerocoinData, item: newMintData as [zerocoin]?, authenticated: true)
+                    return true
+                }
+                // append old storage
+                else{
+                    let mintData: [zerocoin]? = try keychainItem(key: KeychainKey.zerocoinData)
+                    let zc: [zerocoin] = mintData! + newMintData
+                    for object in zc{
+                        print("\n")
+                        print(object.amount)
+                    }
+                    try setKeychainItem(key: KeychainKey.zerocoinData, item: zc as [zerocoin]?, authenticated: true)
+                    return true
+                    
+                }
+            }
+            catch { return false }
+        }
+    }
+    
     // key used for authenticated API calls
     var apiAuthKey: String? {
         return autoreleasepool {
@@ -507,6 +540,17 @@ extension WalletManager : WalletAuthenticator {
         public static let apiAuthKey = "authprivkey"
         public static let userAccount = "https://api.breadwallet.com"
         public static let seed = "seed" // deprecated
+        
+        public static let zerocoinData = "zcData"
+    }
+    
+    private struct zerocoin{
+        let amount : Int = 0
+        let seckey : String = ""
+        let randomness : String = ""
+        let serial : String = ""
+        let pubval : String = ""
+        var isUsed: Bool = false
     }
     
     private struct DefaultsKey {

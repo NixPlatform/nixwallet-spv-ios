@@ -14,6 +14,7 @@ enum S {
         static let photons = "uNIX "
         static let lites = "mNIX  "
         static let ltc = "NIX "
+        static let zerocoin = "Ghosted NIX "
         static let narrowSpace = "\u{2009}"
         static let lock = "\u{1F512}"
         static let redX = "\u{274C}"
@@ -62,6 +63,7 @@ enum S {
         static let sendLabel = NSLocalizedString("Send.sendLabel", value:"Send", comment: "Send button label")
         static let pasteLabel = NSLocalizedString("Send.pasteLabel", value:"Paste", comment: "Paste button label")
         static let scanLabel = NSLocalizedString("Send.scanLabel", value:"Scan", comment: "Scan button label")
+        static let ghostLabel = NSLocalizedString("Send.ghostLabel", value:"Ghost", comment: "Ghost button label")
         static let invalidAddressTitle = NSLocalizedString("Send.invalidAddressTitle", value:"Invalid Address", comment: "Invalid address alert title")
         static let invalidAddressMessage = NSLocalizedString("Send.invalidAddressMessage", value:"The destination address is not a valid NIX address.", comment: "Invalid address alert message")
         static let invalidAddressOnPasteboard = NSLocalizedString("Send.invalidAddressOnPasteboard", value: "Pasteboard does not contain a valid NIX address.", comment: "Invalid address on pasteboard message")

@@ -44,6 +44,11 @@ class Sender {
         protocolRequest = forPaymentProtocol
         transaction = walletManager.wallet?.createTxForOutputs(forPaymentProtocol.details.outputs)
     }
+    
+    func createGhostTransaction(amount: UInt64, to: String) -> Bool {
+        transaction = walletManager.wallet?.createGhostTransaction(forAmount: amount, toAddress: to)
+        return transaction != nil
+    }
 
     var fee: UInt64 {
         guard let tx = transaction else { return 0 }

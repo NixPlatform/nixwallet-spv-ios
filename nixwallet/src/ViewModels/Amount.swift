@@ -83,7 +83,7 @@ struct Amount {
 
         return format
     }
-
+    
     var localFormat: NumberFormatter {
         let format = NumberFormatter()
         format.isLenient = true

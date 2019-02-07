@@ -57,6 +57,7 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
     private var currencySwitcherHeightConstraint: NSLayoutConstraint?
     private var pinPadHeightConstraint: NSLayoutConstraint?
     private var balance: UInt64 = 0
+    private var zerocoinBalance: UInt64 = 0
     private var amount: Satoshis?
     private var didIgnoreUsedAddressWarning = false
     private var didIgnoreIdentityNotCertified = false
@@ -101,6 +102,12 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
                                 self.balance = balance
                             }
         })
+        store.subscribe(self, selector: { $0.walletState.zerocoinBalance != $1.walletState.zerocoinBalance },
+                        callback: {
+                            if let zerocoinBalance = $0.walletState.zerocoinBalance {
+                                self.zerocoinBalance = zerocoinBalance
+                            }
+        })
         walletManager.wallet?.feePerKb = store.state.fees.regular
     }
 
@@ -117,6 +124,8 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
     private func addButtonActions() {
         addressCell.paste.addTarget(self, action: #selector(SendViewController.pasteTapped), for: .touchUpInside)
         addressCell.scan.addTarget(self, action: #selector(SendViewController.scanTapped), for: .touchUpInside)
+        addressCell.ghost.addTarget(self, action: #selector(SendViewController.ghostTapped), for: .touchUpInside)
+
         sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
         descriptionCell.didReturn = { textView in
             textView.resignFirstResponder()
@@ -205,12 +214,71 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
             self?.handleRequest(request)
         }
     }
+    
+    
+    struct zeroCoin: Decodable {
+            let pubCoinSize: Int
+            let pubCoin: String
+            let amount: Int
+            let secKey: String
+            let randomness: String
+            let serial: String
+    }
+    
+    @objc private func ghostTapped() {
+        addressCell.setContent("GhostVault")
+        addressCell.isEditable = true
+    }
 
     @objc private func sendTapped() {
         if addressCell.textField.isFirstResponder {
             addressCell.textField.resignFirstResponder()
         }
 
+        // Process zerocoin mint transaction
+        if addressCell.address == "GhostVault" {
+            // prepare json data
+            let json: [String: Any] = ["method": "mintghostdata",
+                                       "params": [1],
+                                       "returns": ["type": "string"]]
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            
+            // create post request
+            let url = URL(string: "")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            
+            // insert json data to the request
+            request.httpBody = jsonData
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON1 = responseJSON as? [String: Any] {
+                    print(responseJSON1)
+                    if let responseJSON2 = responseJSON1["result"] as? [String: Any] {
+                        let zc = zeroCoin(pubCoinSize: responseJSON2["size"] as! Int, pubCoin: responseJSON2["pubcoin"] as! String,
+                                          amount: responseJSON2["amount"] as! Int, secKey: responseJSON2["seckey"] as! String,
+                                          randomness: responseJSON2["randomness"] as! String, serial: responseJSON2["serial"] as! String)
+                        
+                        print(zc.pubCoinSize)
+                        print(zc.pubCoin)
+                        print(zc.amount)
+                        print(zc.secKey)
+                        print(zc.randomness)
+                        print(zc.serial)
+                    }
+                }
+            }
+            
+            task.resume()
+        }
+        
         if sender.transaction == nil {
             guard let address = addressCell.address else {
                 return showAlert(title: S.Alert.error, message: S.Send.noAddress, buttonLabel: S.Button.ok)

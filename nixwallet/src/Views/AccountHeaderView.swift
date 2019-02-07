@@ -111,7 +111,7 @@ class AccountHeaderView : UIView, GradientDrawable, Subscriber {
 
         secondaryBalance.textColor = .whiteTint
         secondaryBalance.font = UIFont.customBody(size: largeFontSize)
-
+        
         search.setImage(#imageLiteral(resourceName: "SearchIcon"), for: .normal)
         search.tintColor = .white
 
@@ -252,7 +252,7 @@ class AccountHeaderView : UIView, GradientDrawable, Subscriber {
 
     private func setBalances() {
         guard let rate = exchangeRate else { return }
-        let amount = Amount(amount: balance, rate: rate, maxDigits: store.state.maxDigits)
+        let amount = Amount(amount: balance , rate: rate, maxDigits: store.state.maxDigits)
         if !hasInitialized {
             let amount = Amount(amount: balance, rate: exchangeRate!, maxDigits: store.state.maxDigits)
             NSLayoutConstraint.deactivate(isBtcSwapped ? self.regularConstraints : self.swappedConstraints)

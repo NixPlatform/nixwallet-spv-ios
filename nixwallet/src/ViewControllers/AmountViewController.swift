@@ -208,8 +208,12 @@ class AmountViewController : UIViewController, Trackable {
 
     private func toggleCurrency() {
         saveEvent("amount.swapCurrency")
-        selectedRate = selectedRate == nil ? store.state.currentRate : nil
-        updateCurrencyToggleTitle()
+        if self.currencyToggle.title != S.Symbols.currencyButtonTitle(maxDigits: store.state.maxDigits){
+            selectedRate = selectedRate == nil ? store.state.currentRate : nil
+        }
+        else{
+            updateCurrencyToggleTitle()
+        }
     }
 
     private func preventAmountOverflow() {
@@ -357,6 +361,8 @@ class AmountViewController : UIViewController, Trackable {
     private func updateCurrencyToggleTitle() {
         if let rate = selectedRate {
             self.currencyToggle.title = "\(rate.code) (\(rate.currencySymbol))"
+        } else if self.currencyToggle.title == S.Symbols.currencyButtonTitle(maxDigits: store.state.maxDigits){
+            self.currencyToggle.title = "Ghosted NIX"
         } else {
             self.currencyToggle.title = S.Symbols.currencyButtonTitle(maxDigits: store.state.maxDigits)
         }
