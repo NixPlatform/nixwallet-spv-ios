@@ -31,7 +31,7 @@ class RequestAmountViewController : UIViewController {
     private let address = UILabel(font: .customBody(size: 14.0))
     private let addressPopout = InViewAlert(type: .primary)
     private let share = ShadowButton(title: S.Receive.share, type: .tertiary, image: #imageLiteral(resourceName: "Share"))
-    private let sharePopout = InViewAlert(type: .secondary)
+    private let sharePopout = ShareInViewAlert(type: .secondary)
     private let border = UIView()
     private var topSharePopoutConstraint: NSLayoutConstraint?
     private let wallet: BRWallet
@@ -86,7 +86,7 @@ class RequestAmountViewController : UIViewController {
             share.constraint(.centerX, toView: view),
             share.constraint(.width, constant: qrSize.width),
             share.constraint(.height, constant: smallButtonHeight) ])
-        sharePopout.heightConstraint = sharePopout.constraint(.height, constant: 0.0)
+        sharePopout.heightConstraint = sharePopout.constraint(.height, constant: 0)
         topSharePopoutConstraint = sharePopout.constraint(toBottom: share, constant: largeSharePadding)
         sharePopout.constrain([
             topSharePopoutConstraint,
@@ -142,21 +142,32 @@ class RequestAmountViewController : UIViewController {
         container.translatesAutoresizingMaskIntoConstraints = false
         let email = ShadowButton(title: S.Receive.emailButton, type: .tertiary)
         let text = ShadowButton(title: S.Receive.textButton, type: .tertiary)
+        let cr = ShadowButton(title: S.Receive.crButton, type: .tertiary)
+        
         container.addSubview(email)
         container.addSubview(text)
+        container.addSubview(cr)
         email.constrain([
             email.constraint(.leading, toView: container, constant: C.padding[2]),
             email.constraint(.top, toView: container, constant: buttonPadding),
-            email.constraint(.bottom, toView: container, constant: -buttonPadding),
-            email.trailingAnchor.constraint(equalTo: container.centerXAnchor, constant: -C.padding[1]) ])
+            email.trailingAnchor.constraint(equalTo: container.centerXAnchor, constant: -C.padding[1])
+            ])
+        
         text.constrain([
             text.constraint(.trailing, toView: container, constant: -C.padding[2]),
             text.constraint(.top, toView: container, constant: buttonPadding),
-            text.constraint(.bottom, toView: container, constant: -buttonPadding),
-            text.leadingAnchor.constraint(equalTo: container.centerXAnchor, constant: C.padding[1]) ])
+            text.leadingAnchor.constraint(equalTo: container.centerXAnchor, constant: C.padding[1])
+            ])
+        
+        cr.constrain([
+            cr.topAnchor.constraint(equalTo: text.bottomAnchor, constant: buttonPadding),
+            cr.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            ])
+        
         sharePopout.contentView = container
         email.addTarget(self, action: #selector(RequestAmountViewController.emailTapped), for: .touchUpInside)
         text.addTarget(self, action: #selector(RequestAmountViewController.textTapped), for: .touchUpInside)
+        cr.addTarget(self, action: #selector(RequestAmountViewController.crTapped), for: .touchUpInside)
     }
 
     @objc private func shareTapped() {
@@ -185,6 +196,17 @@ class RequestAmountViewController : UIViewController {
         guard let amount = amount else { return showErrorMessage(S.RequestAnAmount.noAmount) }
         let text = PaymentRequest.requestString(withAddress: wallet.receiveAddress, forAmount: amount.rawValue)
         presentText?(text, qrCode.image!)
+    }
+    
+    @objc private func crTapped() {
+        var satoshi = CGFloat.init()
+        if(amount != nil){
+            satoshi = CGFloat(amount!.rawValue) / 100000000.0
+        }
+    
+        let location = "https://coinrequest.io/create?coin=nix&wallet=nixwallet&amount=\(satoshi)&address="+wallet.receiveAddress
+        let url = URL(string: location)
+        UIApplication.shared.open(url!, options:[:], completionHandler:nil)
     }
 
     private func toggle(alertView: InViewAlert, shouldAdjustPadding: Bool, shouldShrinkAfter: Bool = false) {
