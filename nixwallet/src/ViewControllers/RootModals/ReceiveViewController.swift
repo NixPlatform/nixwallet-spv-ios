@@ -34,7 +34,7 @@ class ReceiveViewController : UIViewController, Subscriber, Trackable {
     private let address = UILabel(font: .customBody(size: 14.0))
     private let addressPopout = InViewAlert(type: .primary)
     private let share = ShadowButton(title: S.Receive.share, type: .tertiary, image: #imageLiteral(resourceName: "Share"))
-    private let sharePopout = InViewAlert(type: .secondary)
+    private let sharePopout = ShareInViewAlert(type: .secondary)
     private let border = UIView()
     private let request = ShadowButton(title: S.Receive.request, type: .secondary)
     private let addressButton = UIButton(type: .system)
@@ -177,21 +177,32 @@ class ReceiveViewController : UIViewController, Subscriber, Trackable {
         container.translatesAutoresizingMaskIntoConstraints = false
         let email = ShadowButton(title: S.Receive.emailButton, type: .tertiary)
         let text = ShadowButton(title: S.Receive.textButton, type: .tertiary)
+        let cr = ShadowButton(title: S.Receive.crButton, type: .tertiary)
         container.addSubview(email)
         container.addSubview(text)
+        container.addSubview(cr)
+        
         email.constrain([
             email.constraint(.leading, toView: container, constant: C.padding[2]),
             email.constraint(.top, toView: container, constant: buttonPadding),
-            email.constraint(.bottom, toView: container, constant: -buttonPadding),
-            email.trailingAnchor.constraint(equalTo: container.centerXAnchor, constant: -C.padding[1]) ])
+            email.trailingAnchor.constraint(equalTo: container.centerXAnchor, constant: -C.padding[1])
+            ])
+        
         text.constrain([
             text.constraint(.trailing, toView: container, constant: -C.padding[2]),
             text.constraint(.top, toView: container, constant: buttonPadding),
-            text.constraint(.bottom, toView: container, constant: -buttonPadding),
-            text.leadingAnchor.constraint(equalTo: container.centerXAnchor, constant: C.padding[1]) ])
+            text.leadingAnchor.constraint(equalTo: container.centerXAnchor, constant: C.padding[1])
+            ])
+        
+        cr.constrain([
+            cr.topAnchor.constraint(equalTo: text.bottomAnchor, constant: buttonPadding),
+            cr.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            ])
+        
         sharePopout.contentView = container
         email.addTarget(self, action: #selector(ReceiveViewController.emailTapped), for: .touchUpInside)
         text.addTarget(self, action: #selector(ReceiveViewController.textTapped), for: .touchUpInside)
+        cr.addTarget(self, action: #selector(ReceiveViewController.crTapped), for: .touchUpInside)
     }
 
     @objc private func shareTapped() {
@@ -217,6 +228,16 @@ class ReceiveViewController : UIViewController, Subscriber, Trackable {
 
     @objc private func textTapped() {
         presentText?(address.text!, qrCode.image!)
+    }
+    
+    @objc private func crTapped() {
+        if(address.text == nil){
+            return;
+        }
+        
+        let location = "https://coinrequest.io/create?coin=nix&wallet=nixwallet&amount=0&address="+address.text!
+        let url = URL(string: location)
+        UIApplication.shared.open(url!, options:[:], completionHandler:nil)
     }
 
     private func toggle(alertView: InViewAlert, shouldAdjustPadding: Bool, shouldShrinkAfter: Bool = false) {
